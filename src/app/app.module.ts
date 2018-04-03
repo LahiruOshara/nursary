@@ -10,7 +10,12 @@ import {TeacherService} from './Teacher/teacher/teacher.service';
 import { AppRoutingModule } from './Teacher/teacher/app-routing.module';
 import { TeacherSideBarComponent } from './teacher-side-bar/teacher-side-bar.component';
 import { AccountLoginComponent } from './account-login/account-login.component';
-
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { HomeComponent } from './home/home.component';
+import { AccountRegisterComponent } from './account-register/account-register.component';
+import { ValidateService } from './services/validate.service';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+import { AuthenticationService } from './services/authentication.service';
 
 @NgModule({
   declarations: [
@@ -18,14 +23,18 @@ import { AccountLoginComponent } from './account-login/account-login.component';
     TeacherComponent,
     TeacherDetailComponent,
     TeacherSideBarComponent,
-    AccountLoginComponent
+    AccountLoginComponent,
+    NavBarComponent,
+    HomeComponent,
+    AccountRegisterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FlashMessagesModule.forRoot()
   ],
-  providers: [TeacherService],
+  providers: [TeacherService, ValidateService, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
