@@ -1,0 +1,27 @@
+<br><br><br><br>
+<div class="login">
+
+<form (submit)="onRegSubmit()">
+<div class="container">
+  <label><b>Name</b></label>
+  <input [(ngModel)]="name" name="name" type="text" placeholder="Enter User Name" required>
+  
+  <label><b>Username</b></label>
+  <input [(ngModel)]="username" name="username" type="text" placeholder="Enter User Id" required>
+
+  <label><b>Email</b></label>
+  <input [(ngModel)]="email" name="email" type="text" placeholder="Enter User Id" required>
+
+  <label><b>Password</b></label>
+  <input [(ngModel)]="password" name="password"type="password" placeholder="Enter Password"  required>
+
+  <button type="submit">submit</button>
+</div>
+</form>
+
+<div class="container" style="background-color:#f1f1f1">
+  <button type="button" class="cancelbtn">Cancel</button>
+  <span class="psw">Forgot <a href="#">password?</a></span>
+</div>
+</div>
+
