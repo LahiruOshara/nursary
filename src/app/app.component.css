@@ -1,0 +1,14 @@
+.header {
+    background-image:url("../assets/header.jpeg");
+    padding: 10px 10px 10px 10px;
+    background-attachment: fixed;
+  }
+
+
+  h1.first-page {
+    color:black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+  
+  }
+  
