@@ -5,21 +5,25 @@
     cursor: pointer;
     outline: none;
     color: #fff;
-    background-color: #4CAF50;
+    background-color: #008CBA;;
     border: none;
     border-radius: 10px;
   }
   
-  .button:hover {background-color: #3e8e41}
+  .button:hover {background-color: #008CBA;}
   
   .button:active {
-    background-color: #3e8e41;
+    background-color: #008CBA;;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }
 
-  .button {
-    width: 50%;
-    border: 3px solid green;
-    padding: 10px;
+  
+  .wrapper {
+    text-align: center;
+}
+
+.button {
+    position: center;
+    margin-top: 10%;
 }
