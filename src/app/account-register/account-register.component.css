@@ -1,7 +1,7 @@
 .login {
     margin: auto;
     width: 500px;
-    border: 3px solid green;
+    border: 3px solid #008CBA;
     padding: 10px;
   }
   
@@ -18,7 +18,7 @@
   
   /* Set a style for all buttons */
   button {
-    background-color: #4CAF50;
+    background-color: #008CBA;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
