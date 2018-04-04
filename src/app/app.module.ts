@@ -14,6 +14,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { AccountRegisterComponent } from './account-register/account-register.component';
 import { ValidateService } from './services/validate.service';
+import { AuthenticationService } from './services/authentication.service';
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,10 +29,11 @@ import { ValidateService } from './services/validate.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     AppRoutingModule,
   ],
-  providers: [TeacherService, ValidateService],
+  providers: [TeacherService, ValidateService, AuthenticationService, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
