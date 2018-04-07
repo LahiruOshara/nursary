@@ -1,7 +1,6 @@
-
 .topnav {
     left:0;
-    background-color: rgb(0, 93, 102);
+    background-color: rgb(0, 71, 95);
     overflow: hidden;
   }
   
@@ -17,13 +16,13 @@
   
   /* Change the color of links on hover */
   .topnav a:hover {
-    background-color: #ddd;
+    background-color: rgb(115, 184, 209);
     color: black;
   }
   
   /* Add a color to the active/current link */
   .topnav a.active {
-    background-color: #4CAF50;
+    background-color: #008CBA;
     color: white;
   }
   

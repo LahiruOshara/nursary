@@ -16,6 +16,8 @@ import { AccountRegisterComponent } from './account-register/account-register.co
 import { ValidateService } from './services/validate.service';
 import { AuthenticationService } from './services/authentication.service';
 import {HttpClientModule} from '@angular/common/http';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,7 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
+    FlashMessagesModule.forRoot()
   ],
   providers: [TeacherService, ValidateService, AuthenticationService, AuthenticationService],
   bootstrap: [AppComponent]

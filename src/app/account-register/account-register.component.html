@@ -1,3 +1,4 @@
+<app-nav-bar></app-nav-bar>
 <br><br><br><br>
 <form (submit)="onRegisterSubmit()">
 
@@ -6,13 +7,13 @@
     <input [(ngModel)]="name" name='name' type="text" placeholder="Name" required>
   
     <label><b>Username</b></label>
-    <input [(ngModel)]="username" name='username'type="text" placeholder="Enter User Id" required>
+    <input [(ngModel)]="username" name='username'type="text" placeholder="Username" required>
 
     <label><b>Email Adress</b></label>
-    <input [(ngModel)]="email" name='email' type="text" placeholder="Enter User Id" required>
+    <input [(ngModel)]="email" name='email' type="text" placeholder="Email" required>
 
     <label><b>Password</b></label>
-    <input [(ngModel)]="password" name='password' type="password" placeholder="Enter Password"  required>
+    <input [(ngModel)]="password" name='password' type="password" placeholder="Password"  required>
 
     <button type="submit">submit</button>
   </div>

@@ -3,4 +3,5 @@
   <nav><a routerLinkActive='active' routerLink="/" [routerLinkActiveOptions]="{exact:true}">Home</a></nav>
   <nav><a routerLinkActive='active' routerLink="/accountLogIn" [routerLinkActiveOptions]="{exact:true}"> Log In</a></nav>
   <nav><a routerLinkActive='active' routerLink="/accountRegister" [routerLinkActiveOptions]="{exact:true}"> Register</a></nav>
+  <nav><a (click)="onLogoutClick()" href="#"> Logout</a></nav>
 </div>

@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'teachers', component: TeacherComponent},
   {path: 'detail/:id', component: TeacherDetailComponent },
   {path: 'accountLogIn', component: AccountLoginComponent  },
-  {path:'accountRegister',component:AccountRegisterComponent}
+  {path: 'accountRegister', component: AccountRegisterComponent}
 ];
 
 @NgModule({

@@ -13,33 +13,32 @@ import {Router} from '@angular/router';
 export class AccountRegisterComponent implements OnInit {
 
   name: String;
-  username:String;
-  email:String;
-  password:String;
+  username: String;
+  email: String;
+  password: String;
 
-  constructor(private validateService:ValidateService,
-    private authService:AuthenticationService,
-    private router:Router
+  constructor(private validateService: ValidateService,
+    private authService: AuthenticationService,
+    private router: Router
   ) { }
 
   ngOnInit() {
   }
 
-  onRegisterSubmit(){
-    const user={
-      name:this.name,
-      email:this.email,
-      username:this.username,
-      password:this.password
-    }
-    console.log("Submit button pressed");
-
-    //
-    if(!this.validateService.validateRegister(user)){
+  onRegisterSubmit() {
+    const user = {
+      name: this.name,
+      email: this.email,
+      username: this.username,
+      password: this.password
+    };
+    // console.log( 'Submit button pressed' );
+    // validating
+    if (!this.validateService.validateRegister(user)) {
       console.log('fill in all fields');
     }
 
-    if(!this.validateService.validateEmail(this.email)){
+    if (!this.validateService.validateEmail(this.email)) {
       console.log('enter valid email');
     }else{
       console.log(user);
