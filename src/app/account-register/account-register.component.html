@@ -3,13 +3,34 @@
 <form (submit)="onRegisterSubmit()">
 
   <div class="container">
-    <label><b>Name</b></label>
-    <input [(ngModel)]="name" name='name' type="text" placeholder="Name" required>
+    <div class="name">    
+    <label><b>First Name</b></label>
+    </div>
+    <div class="name">
+    <input [(ngModel)]="firstName" name='firstName' type="text" placeholder="Name" required>
+    <label><b>Middle Name</b></label>
+    </div>
+    <div class="name">
+    <input [(ngModel)]="middleName" name='middleName' type="text" placeholder="Name" required>
+    </div>
+    <label><b>Last Name</b></label>
+    <div class="name">
+    <input [(ngModel)]="lastName" name='lastName' type="text" placeholder="Name" required>
+    </div>
+
+    <label><b>Account Type</b></label>
+    <input [(ngModel)]="accountType" name='accountType' type="text" placeholder="Type" required>
   
+
+    <label><b>Address</b></label>
+    <input [(ngModel)]="address" name='address' type="text" placeholder="address" required>
+
+    <label><b>Mobile No</b></label>
+    <input [(ngModel)]="mobileNo" name='mobileNo' type="text" placeholder="Mobile No" required>
+
     <label><b>Username</b></label>
     <input [(ngModel)]="username" name='username'type="text" placeholder="Username" required>
-
-    <label><b>Email Adress</b></label>
+    <label><b>Email Address</b></label>
     <input [(ngModel)]="email" name='email' type="text" placeholder="Email" required>
 
     <label><b>Password</b></label>

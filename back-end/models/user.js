@@ -5,11 +5,31 @@ const config=require('../config/database');
 //user schema
 const UserSchema= mongoose.Schema(
   {
-    name:{
+    firstName:{
       type:String,
       required:true
     },
+    middleName:{
+      type:String,
+      required:false
+    },
+    lastName:{
+      type:String,
+      required:true
+    },
+    accountType:{
+      type:String,
+      required:true
+    },
+    mobileNo:{
+      type: String,
+      required: true
+    },
     email:{
+      type:String,
+      required:true
+    },
+    address:{
       type:String,
       required:true
     },
@@ -21,6 +41,7 @@ const UserSchema= mongoose.Schema(
       type:String,
       required:true
     },
+
   }
 );
 

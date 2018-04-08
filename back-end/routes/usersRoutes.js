@@ -9,7 +9,12 @@ const config=require('../config/database');
 //Register
 router.post('/register',(req,res,next)=>{
   let newUser= new User({
-    name:req.body.name,
+    firstName:req.body.firstName,
+    middleName:req.body.middleName,
+    lastName:req.body.lastName,
+    accountType:req.body.accountType,
+    address:req.body.address,
+    mobileNo:req.body.mobileNo,
     email:req.body.email,
     username:req.body.username,
     password:req.body.password,
