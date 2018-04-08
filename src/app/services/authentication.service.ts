@@ -26,9 +26,9 @@ export class AuthenticationService {
     // tslint:disable-next-line:prefer-const
     const headers = new HttpHeaders().set('Authorization', `Bearer ${this.loadToken()}` );
     // console.log(`Bearer ${this.loadToken()}`);
-    console.log('auth service');
+    // console.log('auth service');
     // headers.set('Content-Type', 'application/json');
-    console.log('auth service:' + headers.get('Authorization'));
+    // console.log('auth service:' + headers.get('Authorization'));
     return this.http.get('http://localhost:4000/users/profile', {headers: headers}) as Observable<ProfileResponse>;
   }
 
