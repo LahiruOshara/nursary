@@ -18,16 +18,18 @@ export class AuthenticationService {
 
   authenticateUser(user) {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    // console.log('auth service:' + headers.get('Content-Type'));
     return this.http.post('http://localhost:4000/users/authenticate', user, {headers: headers}) as Observable<AuthenticateResponse>;
   }
 
   getProfile() {
     // tslint:disable-next-line:prefer-const
-    let headers = new HttpHeaders();
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.loadToken()}` );
     // console.log(`Bearer ${this.loadToken()}`);
-    headers.set('Authorization', `Bearer ${this.loadToken()}` );
-    headers.set('Content-Type', 'application/json');
-    return this.http.get('http://localhost:4000/users/profile', {headers: headers}) as Observable<AuthenticateResponse>;
+    console.log('auth service');
+    // headers.set('Content-Type', 'application/json');
+    console.log('auth service:' + headers.get('Authorization'));
+    return this.http.get('http://localhost:4000/users/profile', {headers: headers}) as Observable<ProfileResponse>;
   }
 
   storeUserdata(token, user) {
@@ -63,4 +65,8 @@ interface AuthenticateResponse {
   token: string;
   user: any;
   msg: string;
+}
+
+interface ProfileResponse {
+  user: any;
 }
