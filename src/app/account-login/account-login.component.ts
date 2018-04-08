@@ -30,6 +30,7 @@ export class AccountLoginComponent implements OnInit {
     this.authenticationService.authenticateUser(user).subscribe(data => {
       // console.log(data);
       if (data.success) {
+        console.log(data.token);
         this.authenticationService.storeUserdata(data.token, data.user);
         this.router.navigate(['teachers']);
       } else {
