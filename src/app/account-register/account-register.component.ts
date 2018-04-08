@@ -11,8 +11,13 @@ import {Router} from '@angular/router';
 })
 
 export class AccountRegisterComponent implements OnInit {
-
-  name: String;
+  // user fields
+  firstName: String;
+  middleName: String;
+  lastName: String;
+  accountType: String;
+  address: String;
+  mobileNo: String;
   username: String;
   email: String;
   password: String;
@@ -27,30 +32,38 @@ export class AccountRegisterComponent implements OnInit {
 
   onRegisterSubmit() {
     const user = {
-      name: this.name,
+      firstName: this.firstName,
+      middleName: this.middleName,
+      lastName: this.lastName,
+      accountType: this.accountType,
+      address: this.address,
       email: this.email,
+      mobileNo: this.mobileNo,
       username: this.username,
       password: this.password
     };
-    // console.log( 'Submit button pressed' );
+    console.log( 'Submit button pressed' );
     // validating
     if (!this.validateService.validateRegister(user)) {
       console.log('fill in all fields');
+      return false;
     }
 
     if (!this.validateService.validateEmail(this.email)) {
       console.log('enter valid email');
-    }else{
+      return false;
+    } else {
       console.log(user);
     }
-    
-    //register user
-    this.authService.registerUser(user).subscribe(data =>{   
-      console.log('Trying to register');   
-      if(data.success){
-        console.log("Successfully registered");
+
+    // register user
+    this.authService.registerUser(user).subscribe(data => {
+      console.log('Trying to register');
+      if (data.success) {
+        console.log('Successfully registered');
       } else {
-        console.log("Something went wrong");
+        console.log(data);
+        console.log('Something went wrong');
       }
     });
   }
