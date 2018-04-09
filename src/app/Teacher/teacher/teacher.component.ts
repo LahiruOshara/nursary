@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {TEACHER} from './teacher';
-import {TeacherService} from './teacher.service';
+import { AuthenticationService } from '../../services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-teacher',
@@ -9,22 +9,9 @@ import {TeacherService} from './teacher.service';
 })
 
 export class TeacherComponent implements OnInit {
-  selectedTeacher: TEACHER;
-  teachers: TEACHER[];
-
-
-  constructor(private teacherService: TeacherService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.getTeachers();
-  }
-
-  onSelect( steacher: TEACHER ): void{
-    this.selectedTeacher = steacher;
-  }
-
-  getTeachers(): void {
-    this.teacherService.getTeachers().subscribe(teachers => this.teachers = teachers);
   }
 
 }

@@ -17,6 +17,7 @@ import { AuthenticationService } from './services/authentication.service';
 import {HttpClientModule} from '@angular/common/http';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { ProfileComponent } from './profile/profile.component';
+import { GuardService } from './services/guard.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { ProfileComponent } from './profile/profile.component';
     AppRoutingModule,
     FlashMessagesModule.forRoot()
   ],
-  providers: [TeacherService, ValidateService, AuthenticationService, AuthenticationService],
+  providers: [TeacherService, ValidateService, AuthenticationService, GuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
