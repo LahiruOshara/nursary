@@ -1,7 +1,8 @@
 <div class="topnav">
-
   <nav><a routerLinkActive='active' routerLink="/" [routerLinkActiveOptions]="{exact:true}">Home</a></nav>
-  <nav><a routerLinkActive='active' routerLink="/accountLogIn" [routerLinkActiveOptions]="{exact:true}"> Log In</a></nav>
-  <nav><a routerLinkActive='active' routerLink="/accountRegister" [routerLinkActiveOptions]="{exact:true}"> Register</a></nav>
-  <nav><a (click)="onLogoutClick()" href="#"> Logout</a></nav>
+  <nav *ngIf="authenticationService.loggedIn()" ><a routerLinkActive='active' routerLink="/profile" [routerLinkActiveOptions]="{exact:true}"> Profile</a></nav>
+  <nav *ngIf="authenticationService.loggedIn()"><a (click)="onLogoutClick()" href="#"> Logout</a></nav>
 </div>
+
+
+

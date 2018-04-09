@@ -61,6 +61,7 @@ export class AccountRegisterComponent implements OnInit {
       console.log('Trying to register');
       if (data.success) {
         console.log('Successfully registered');
+        this.router.navigate(['teachers']);
       } else {
         console.log(data);
         console.log('Something went wrong');
