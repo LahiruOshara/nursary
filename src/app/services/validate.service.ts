@@ -29,4 +29,12 @@ export class ValidateService {
       return true;
     }return false;
   }
+
+  validateLeaveForm(form) {
+    if (form.username === undefined || form.edate === undefined || form.sdate === undefined || form.reason === undefined ) {
+      return false;
+    }return true;
+  }
+
 }
+

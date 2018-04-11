@@ -2,10 +2,8 @@
 /* The sidebar menu */
 .teacher-side-bar {
   height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: auto; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: auto; /* Stay on top */
-  top: auto; /* Stay at the top */
+  width: 15%; /* Set the width of the sidebar */
+  position : fixed; /* Fixed Sidebar (stay in place on scroll) */
   left: 32px;
   background-color: black; /* Black */
   overflow-x: hidden; /* Disable horizontal scroll */

@@ -1,0 +1,24 @@
+<app-teacher-side-bar></app-teacher-side-bar>
+
+<form (submit)="onFormSubmit()">
+
+  <div class="container"> 
+    <label><b>Username</b></label>
+    <input [(ngModel)]="username" name='username'type="text" placeholder="Username" required>
+    <br><br>
+
+    <label><b>Starting Date</b></label>
+    <input [(ngModel)]="sdate" name='sdate'type="date" required>
+
+    <label><b>Ending Date</b></label>
+    <input [(ngModel)]="edate" name='edate'type="date" required>
+    <br><br>
+
+    <label ><b>Reason</b></label>
+    <input class="resizedText" [(ngModel)]="reason" name='reason'type="text" placeholder="Type here" required>
+    
+    
+    <button type="submit">submit</button>
+  </div>
+</form>
+<flash-messages></flash-messages>
