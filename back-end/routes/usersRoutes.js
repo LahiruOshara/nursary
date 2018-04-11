@@ -35,7 +35,8 @@ router.post('/register',(req,res,next)=>{
 router.post('/authenticate',(req,res,next)=>{
     const username=req.body.username;
     const password=req.body.password;
-    
+
+
     User.getUserByUsername(username,function(error,user){
       if(error) throw error;
       if(!user){
@@ -68,12 +69,8 @@ router.post('/authenticate',(req,res,next)=>{
 
 //Routes
 router.get('/profile',passport.authenticate('jwt',{session:false}),function(req,res,next){
-  //console.log("Here usersjs");  
+  console.log("Here usersjs");  
   res.json({user:req.user});
-})
-
-router.get('/teacher',passport.authenticate('jwt',{session:false}),function(req,res,next){  
-  res.send();
 })
 
 module.exports=router;

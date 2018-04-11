@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-// import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
-// import { tokenNotExpired } from 'angular2-jwt';
 
 @Injectable()
 export class AuthenticationService {
@@ -12,13 +11,12 @@ export class AuthenticationService {
   constructor(private http: HttpClient) {
   }
 
-  // register user
-  registerUser(user): Observable<RegularResponse> {
+  registerUser(user): Observable<RegisterResponse> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post('http://localhost:4000/users/register', user, {headers: headers}) as Observable<RegularResponse>;
+    return this.http.post('http://localhost:4000/users/register', user, {headers: headers}) as Observable<RegisterResponse>;
   }
-  // authenticate
-  authenticateUser(user): Observable<AuthenticateResponse> {
+
+  authenticateUser(user) {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     // console.log('auth service:' + headers.get('Content-Type'));
     return this.http.post('http://localhost:4000/users/authenticate', user, {headers: headers}) as Observable<AuthenticateResponse>;
@@ -54,16 +52,10 @@ export class AuthenticationService {
     this.user = null;
     localStorage.clear();
   }
-
-  loggedIn() {
-    return !(localStorage.getItem('id_token') === null);
-  }
-
-
 }
 
 
-interface RegularResponse {
+interface RegisterResponse {
   success: boolean;
   msg: string;
 }
