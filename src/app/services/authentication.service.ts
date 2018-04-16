@@ -38,6 +38,7 @@ export class AuthenticationService {
     localStorage.setItem('id_token', token);
     // console.log(token);
     localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('type', user.accountType);
     this.token = token;
     this.user = user;
   }
