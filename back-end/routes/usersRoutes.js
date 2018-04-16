@@ -53,7 +53,7 @@ router.post('/authenticate',(req,res,next)=>{
         token:token,
         user:{
           id:user._id,
-          name:user.name,
+          accountType:user.accountType,
           username:user.username,
           email:user.email 
         }

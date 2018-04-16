@@ -20,6 +20,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { GuardService } from './services/guard.service';
 import { LeaveApplicationComponent } from '../app/Teacher/leave-application/leave-application.component';
 import { LeaveAppServiceService } from './services/leave-app-service.service';
+import { AdminSideBarComponent } from './Admin/admin-side-bar/admin-side-bar.component';
+import { AdminComponent } from './Admin/admin/admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,9 @@ import { LeaveAppServiceService } from './services/leave-app-service.service';
     HomeComponent,
     AccountRegisterComponent,
     ProfileComponent,
-    LeaveApplicationComponent
+    LeaveApplicationComponent,
+    AdminSideBarComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
