@@ -22,6 +22,7 @@ import { LeaveApplicationComponent } from '../app/Teacher/leave-application/leav
 import { LeaveAppServiceService } from './services/leave-app-service.service';
 import { AdminSideBarComponent } from './Admin/admin-side-bar/admin-side-bar.component';
 import { AdminComponent } from './Admin/admin/admin.component';
+import { UserRegisterComponent } from './Admin/user-register/user-register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,14 +35,15 @@ import { AdminComponent } from './Admin/admin/admin.component';
     ProfileComponent,
     LeaveApplicationComponent,
     AdminSideBarComponent,
-    AdminComponent
+    AdminComponent,
+    UserRegisterComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    FlashMessagesModule.forRoot()
+    FlashMessagesModule.forRoot(),
   ],
   providers: [TeacherService, ValidateService, AuthenticationService, GuardService, LeaveAppServiceService],
   bootstrap: [AppComponent]

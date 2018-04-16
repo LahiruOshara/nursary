@@ -12,7 +12,7 @@ import { AdminSideBarComponent } from '../Admin/admin-side-bar/admin-side-bar.co
 import { AdminComponent } from '../Admin/admin/admin.component';
 
 const routes: Routes = [
-  {path: '', component: AccountLoginComponent},
+  {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
   {path: 'teachers', component: TeacherComponent, canActivate: [GuardService]},
   {path: 'admin', component: AdminComponent, canActivate: [GuardService]},

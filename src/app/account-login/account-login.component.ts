@@ -41,7 +41,19 @@ export class AccountLoginComponent implements OnInit {
       if (data.success) {
         // console.log(data.token);
         this.authenticationService.storeUserdata(data.token, data.user);
-        this.router.navigate(['teachers']);
+        if (data.user.accountType === 'Admin') {
+          this.router.navigate(['admin']);
+          return true;
+        }
+        if (data.user.accountType === 'Teacher') {
+          this.router.navigate(['teachers']);
+          return true;
+        }
+        /*
+        if (data.user.accountType === 'Admin') {
+          this.router.navigate(['admin']);
+          return true;
+        }*/
       } else {
         this.messages.show(data.msg, {
           cssClass: 'alert-danger',

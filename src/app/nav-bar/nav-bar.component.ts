@@ -25,5 +25,19 @@ export class NavBarComponent implements OnInit {
     this.router.navigate(['accountLogIn']);
     return false;
   }
+  onClickHome() {
+    const type = localStorage.getItem('type');
+    if ( type === 'Admin') {
+      this.router.navigate(['admin']);
+      return true;
+    }
+    if ( type === 'Teacher') {
+      this.router.navigate(['teachers']);
+      return true;
+    }
+    if ( type === undefined) {
+      this.router.navigate(['/']);
+    }
+  }
 
 }
