@@ -11,7 +11,7 @@ import { TeacherSideBarComponent } from '../app/Teacher/teacher-side-bar/teacher
 import { AccountLoginComponent } from './account-login/account-login.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
-import { AccountRegisterComponent } from './account-register/account-register.component';
+import { AccountRegisterComponent } from '../app/Admin/account-register/account-register.component';
 import { ValidateService } from './services/validate.service';
 import { AuthenticationService } from './services/authentication.service';
 import {HttpClientModule} from '@angular/common/http';
@@ -23,6 +23,8 @@ import { LeaveAppServiceService } from './services/leave-app-service.service';
 import { AdminSideBarComponent } from './Admin/admin-side-bar/admin-side-bar.component';
 import { AdminComponent } from './Admin/admin/admin.component';
 import { UserRegisterComponent } from './Admin/user-register/user-register.component';
+import { RequestForMaintenanceComponent } from './Teacher/request-for-maintenance/request-for-maintenance.component';
+import { AskForAdvancePaymentComponent} from './Teacher/ask-for-advance-payment/ask-for-advance-payment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,9 @@ import { UserRegisterComponent } from './Admin/user-register/user-register.compo
     LeaveApplicationComponent,
     AdminSideBarComponent,
     AdminComponent,
-    UserRegisterComponent
+    UserRegisterComponent,
+    RequestForMaintenanceComponent,
+    AskForAdvancePaymentComponent
   ],
   imports: [
     BrowserModule,
