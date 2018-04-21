@@ -3,11 +3,13 @@ import { AuthenticationService } from '../services/authentication.service';
 import { Router } from '@angular/router';
 import { FlashMessagesService} from 'angular2-flash-messages';
 import { ValidateService } from '../services/validate.service';
+
 @Component({
   selector: 'app-account-login',
   templateUrl: './account-login.component.html',
   styleUrls: ['./account-login.component.css']
 })
+
 export class AccountLoginComponent implements OnInit {
   username: string;
   password: string;
@@ -50,7 +52,7 @@ export class AccountLoginComponent implements OnInit {
           return true;
         }
         /*
-        if (data.user.accountType === 'Admin') {
+        if (data.user.accountType === 'Student') {
           this.router.navigate(['admin']);
           return true;
         }*/
