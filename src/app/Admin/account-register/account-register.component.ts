@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ValidateService } from '../services/validate.service';
-import {AuthenticationService} from '../services/authentication.service';
+import { ValidateService } from '../../services/validate.service';
+import {AuthenticationService} from '../../services/authentication.service';
 import {Router} from '@angular/router';
 
 
@@ -69,4 +69,22 @@ export class AccountRegisterComponent implements OnInit {
     });
   }
 
+
+  // giving access only to the appropiate user
+  onClickReg() {
+    const type = localStorage.getItem('type');
+    if ( type === 'Admin') {
+      this.router.navigate(['accountRegister']);
+      return true;
+    }
+    if ( type === 'Teacher') {
+      this.router.navigate(['Home']);
+      return false;
+    }
+    /*if ( type === 'Student') {
+      this.router.navigate(['Home']);
+      return false;
+    }*/
+    return false;
+  }
 }

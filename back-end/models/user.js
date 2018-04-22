@@ -53,6 +53,7 @@ module.exports.getUserByID=function(id,callback){
 
 module.exports.getUserByUsername=function(username,callback){
   const query ={username:username};
+  //db.collection.findOne(query, projection)
   User.findOne(query,callback);
 }
 
