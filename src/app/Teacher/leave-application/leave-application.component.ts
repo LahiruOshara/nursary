@@ -39,12 +39,15 @@ export class LeaveApplicationComponent implements OnInit {
       return false;
     }
 
-    console.log(leaveApplication);
+    // console.log(leaveApplication);
 
     this.leaveAppService.submitLeaveApplication(leaveApplication ).subscribe(data => {
-      console.log('Trying to register');
+      // console.log('Trying to register');
       if (data.success) {
-          // sconsole.log(data.msg);
+        // console.log(data.msg);
+        this.messages.show( 'Submited', {
+          cssClass: 'alert-success',
+          timeOut: 300 });
           this.router.navigate(['teachers']);
 
       } else {

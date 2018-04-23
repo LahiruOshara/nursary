@@ -37,6 +37,7 @@ export class NavBarComponent implements OnInit {
     }
     if ( type === undefined) {
       this.router.navigate(['/']);
+      return false;
     }
   }
 

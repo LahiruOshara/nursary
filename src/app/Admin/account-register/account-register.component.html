@@ -5,23 +5,59 @@
 <form (submit)="onRegisterSubmit()">
 
   <div class="container">
-    <div class="name">    
+    <div class="row">
+  <div class="column">
+    <div class="name">
     <label><b>First Name</b></label>
-    </div>
-    <div class="name">
+
     <input [(ngModel)]="firstName" name='firstName' type="text" placeholder="Name" required>
-    <label><b>Middle Name</b></label>
     </div>
-    <div class="name">
+  </div>
+  <div class="column">
+    <div class="name" >
+    <label><b>Middle Name</b></label>
+
     <input [(ngModel)]="middleName" name='middleName' type="text" placeholder="Name" required>
     </div>
-    <label><b>Last Name</b></label>
-    <div class="name">
-    <input [(ngModel)]="lastName" name='lastName' type="text" placeholder="Name" required>
-    </div>
+  </div>
+    <div class="column">
+      <div class="name" style = "float: left; width : 100%">
+      <label><b>Last Name</b></label>
 
+      <input [(ngModel)]="lastName" name='lastName' type="text" placeholder="Name" required>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <div style="padding : 15px">
+
+<div class="row3">
+  <div class="column3">
     <label><b>Account Type</b></label>
-    <input [(ngModel)]="accountType" name='accountType' type="text" placeholder="Type" required>
+  </div>
+  <div class="column3" >
+    <select [(ngModel)] = "accountType" name="accountType">
+  <option value="Admin">Administrator</option>
+  <option value="Teacher">Teacher</option>
+  <option value="Parent">Parent</option>
+
+</select>
+  </div>
+
+</div>
+<br>
+
+
+
+
+  <!--  <input [(ngModel)]="accountType" name='accountType' type="text" placeholder="Type" required> -->
   
 
     <label><b>Address</b></label>
@@ -30,13 +66,26 @@
     <label><b>Mobile No</b></label>
     <input [(ngModel)]="mobileNo" name='mobileNo' type="text" placeholder="Mobile No" required>
 
-    <label><b>Username</b></label>
-    <input [(ngModel)]="username" name='username'type="text" placeholder="Username" required>
+
     <label><b>Email Address</b></label>
     <input [(ngModel)]="email" name='email' type="text" placeholder="Email" required>
 
-    <label><b>Password</b></label>
-    <input [(ngModel)]="password" name='password' type="password" placeholder="Password"  required>
+</div>
+
+
+
+    <div class="row2">
+      <div class="column2">
+        <label><b>Username</b></label>
+        <input [(ngModel)]="username" name='username'type="text" placeholder="Username" required>
+      </div>
+      <div class="column2">
+        <label><b>Password</b></label>
+        <input [(ngModel)]="password" name='password' type="password" placeholder="Password"  required>
+      </div>
+
+    </div>
+
 
     <button type="submit">submit</button>
   </div>
