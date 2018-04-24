@@ -33,11 +33,16 @@ export class LeaveApplicationComponent implements OnInit {
     };
 
     if (!this.validateService.validateLeaveForm(leaveApplication)) {
-      this.messages.show( 'Enter Details Correctly', {
+      this.messages.show( 'Enter Details', {
         cssClass: 'alert-danger',
         timeOut: 5000 });
         // console.log('date not valid');
       return false;
+    }
+    if (!this.validateService.validateDates(leaveApplication.sdate, leaveApplication.edate)) {
+      this.messages.show( 'Dates are not valid', {
+        cssClass: 'alert-danger',
+        timeOut: 5000 });
     }
 
     // console.log(leaveApplication);
