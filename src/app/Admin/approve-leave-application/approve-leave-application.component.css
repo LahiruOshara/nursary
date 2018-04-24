@@ -1,0 +1,26 @@
+.details{
+ list-style-type: none;
+
+
+}
+.details li{
+  margin: 10px 0;
+
+}
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  margin-left: 18%;
+}
+
+
+/* Set a style for all buttons */
+button {
+  background-color: #008CBA;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 80%;
+}

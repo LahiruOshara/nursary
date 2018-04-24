@@ -25,6 +25,7 @@ import { AdminComponent } from './Admin/admin/admin.component';
 import { UserRegisterComponent } from './Admin/user-register/user-register.component';
 import { RequestForMaintenanceComponent } from './Teacher/request-for-maintenance/request-for-maintenance.component';
 import { AskForAdvancePaymentComponent} from './Teacher/ask-for-advance-payment/ask-for-advance-payment.component';
+import { DeclareholidayComponent } from './Admin/declareholiday/declareholiday.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { AskForAdvancePaymentComponent} from './Teacher/ask-for-advance-payment/
     AdminComponent,
     UserRegisterComponent,
     RequestForMaintenanceComponent,
-    AskForAdvancePaymentComponent
+    AskForAdvancePaymentComponent,
+    DeclareholidayComponent
   ],
   imports: [
     BrowserModule,

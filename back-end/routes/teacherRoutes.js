@@ -25,6 +25,17 @@ router.post('/leaveApplication',(req,res,next)=>{
     });
 });
 
+// sending the leave application
+/*
+router.get('/approveLeave',function(req,res,next){  
+    leaveApplication.getApplications({},(error,applications)=>{
+        if(error) throw error;
+    });
+    res.json({applications:applications});
+  
+});
+*/
+
 // saving the advanced payment application
 router.post('/advPayment',(req,res,next)=>{
     let application=new advPaymentForm({

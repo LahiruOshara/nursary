@@ -1,0 +1,20 @@
+<app-nav-bar></app-nav-bar>
+<app-admin-side-bar></app-admin-side-bar>
+<br><br><br><br>
+
+<h1 style = "text-align : center"> Declare a holiday </h1>
+
+<form (submit)="onRegisterSubmit()">
+
+  <div class="container">
+    <label><b>Date</b></label>
+    <input [(ngModel)]= "Date" name='firstName' type="date" placeholder="Name" required>
+    <br><br><br>
+
+    <label><b>Reason</b></label>
+
+        <input class="resizedText" [(ngModel)]="reason" name='reason'type="text" placeholder="" required>
+
+    <button type="submit">submit</button>
+  </div>
+</form>

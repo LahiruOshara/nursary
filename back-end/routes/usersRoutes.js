@@ -35,7 +35,7 @@ router.post('/authenticate',(req,res,next)=>{
     const username=req.body.username;
     const password=req.body.password;
     
-    User.getUserByUsername(username,function(error,user){
+    User.getUserByUsername(username,(error,user)=>{
       if(error) throw error;
       if(!user){
         return res.json({success:false, msg:'user not found'})
@@ -67,7 +67,8 @@ router.post('/authenticate',(req,res,next)=>{
 
 //Routes
 router.get('/profile',passport.authenticate('jwt',{session:false}),function(req,res,next){
-  //console.log("Here usersjs");  
+  //console.log("Here usersjs");
+  //console.log(req.user);  
   res.json({user:req.user});
 })
 
