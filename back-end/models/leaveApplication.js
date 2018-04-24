@@ -28,8 +28,7 @@ module.exports.recordApplication= function(application,callback){
     //console.log("saved the application");
 }
 
-/*
+
 module.exports.getApplications=function(application,callback){
-    application.find(application,callback);
+    leaveApplication.find(application,callback);
   }
-*/
