@@ -33,14 +33,15 @@ export class LeaveApplicationComponent implements OnInit {
     };
 
     if (!this.validateService.validateLeaveForm(leaveApplication)) {
-      this.messages.show( 'Enter Details', {
+      this.messages.show( 'Enter Details Correctly', {
         cssClass: 'alert-danger',
         timeOut: 5000 });
+        // console.log('date not valid');
       return false;
     }
 
     // console.log(leaveApplication);
-
+    console.log('date validated');
     this.leaveAppService.submitLeaveApplication(leaveApplication ).subscribe(data => {
       // console.log('Trying to register');
       if (data.success) {
@@ -48,7 +49,7 @@ export class LeaveApplicationComponent implements OnInit {
         this.messages.show( 'Submited', {
           cssClass: 'alert-success',
           timeOut: 300 });
-          this.router.navigate(['teachers']);
+          // this.router.navigate(['teachers']);
 
       } else {
         this.messages.show( data.msg, {

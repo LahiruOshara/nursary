@@ -33,8 +33,25 @@ export class ValidateService {
   validateLeaveForm(form) {
     if (form.username === undefined || form.edate === undefined || form.sdate === undefined || form.reason === undefined ) {
       return false;
-    }return true;
+    }
+    // validate dates
+    // ...
+    if (this.validateDates(form.sdate, form.edate)) {
+      return true;
+    }
+
   }
+
+  validateDates(date1, date2) {
+    const temp1 = new Date(date1);
+    const temp2 = new Date(date2);
+    if (temp1 <= temp2) {
+      return true;
+    }return false;
+
+  }
+
+
 
 }
 

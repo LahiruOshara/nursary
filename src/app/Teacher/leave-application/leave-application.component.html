@@ -3,13 +3,7 @@
 <form (submit)="onFormSubmit()">
   <div class="container"> 
     <label><b>Username</b></label>
-    <input [(ngModel)]="username" name='username'type="text" placeholder="Username" required
-    #name="ngModel" >
-    <div [hidden]="name.valid || name.pristine"
-          class="alert alert-danger">
-             Name is required
-         </div>
-    
+    <input [(ngModel)]="username" name='username'type="text" placeholder="Username" required >    
     <br><br>
 
     <label><b>Starting Date</b></label>
