@@ -26,6 +26,7 @@ import { UserRegisterComponent } from './Admin/user-register/user-register.compo
 import { RequestForMaintenanceComponent } from './Teacher/request-for-maintenance/request-for-maintenance.component';
 import { AskForAdvancePaymentComponent} from './Teacher/ask-for-advance-payment/ask-for-advance-payment.component';
 import { DeclareholidayComponent } from './Admin/declareholiday/declareholiday.component';
+import { ApproveLeaveApplicationComponent} from './Admin/approve-leave-application/approve-leave-application.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import { DeclareholidayComponent } from './Admin/declareholiday/declareholiday.c
     UserRegisterComponent,
     RequestForMaintenanceComponent,
     AskForAdvancePaymentComponent,
-    DeclareholidayComponent
+    DeclareholidayComponent,
+    ApproveLeaveApplicationComponent
   ],
   imports: [
     BrowserModule,

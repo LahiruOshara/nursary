@@ -1,29 +1,5 @@
-<h2>Approve Leave Form</h2>
-
-<form (submit)="onFormSubmit()">
-  <div class="">
-    <ul class="details">
-     <li>Username</li>
-     <li>Start Date</li>
-     <li>End Date</li>
-     <li>Reason</li>
-
-    </ul>
-
-  </div>
-
-
-  <div class="container">
-
-    <input [(ngModel)]="approve" name='approve'type="Radiobutton">Approve
-    <input [(ngModel)]="disapprove" name='disapprove'type="Radiobutton">Disapprove
-    <br><br>
-
-
-    <label ><b>Reason</b></label><br>
-    <input class="resizedText" [(ngModel)]="comment" name='comment'type="text" placeholder="Type here" >
-
- <br><br>
-    <button type="submit">submit</button>
-  </div>
-</form>
+<ul>
+  <li *ngFor="let application of applications">
+    <span class="badge">{{application.username}}</span>{{application.sdate}}{{application.edate}}{{application.reason}}
+  </li>
+</ul>
