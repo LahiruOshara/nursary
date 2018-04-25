@@ -36,16 +36,25 @@ export class LeaveApplicationComponent implements OnInit {
       this.messages.show( 'Enter Details', {
         cssClass: 'alert-danger',
         timeOut: 5000 });
+        // console.log('date not valid');
       return false;
     }
+    if (!this.validateService.validateDates(leaveApplication.sdate, leaveApplication.edate)) {
+      this.messages.show( 'Dates are not valid', {
+        cssClass: 'alert-danger',
+        timeOut: 5000 });
+    }
 
-    console.log(leaveApplication);
-
+    // console.log(leaveApplication);
+    console.log('date validated');
     this.leaveAppService.submitLeaveApplication(leaveApplication ).subscribe(data => {
-      console.log('Trying to register');
+      // console.log('Trying to register');
       if (data.success) {
-          // sconsole.log(data.msg);
-          this.router.navigate(['teachers']);
+        // console.log(data.msg);
+        this.messages.show( 'Submited', {
+          cssClass: 'alert-success',
+          timeOut: 300 });
+          // this.router.navigate(['teachers']);
 
       } else {
         this.messages.show( data.msg, {

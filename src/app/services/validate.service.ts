@@ -36,5 +36,16 @@ export class ValidateService {
     }return true;
   }
 
+  validateDates(date1, date2) {
+    const temp1 = new Date(date1);
+    const temp2 = new Date(date2);
+    if (temp1 <= temp2) {
+      return true;
+    }return false;
+
+  }
+
+
+
 }
 

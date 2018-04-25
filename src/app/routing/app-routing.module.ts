@@ -12,9 +12,12 @@ import { AdminSideBarComponent } from '../Admin/admin-side-bar/admin-side-bar.co
 import { AdminComponent } from '../Admin/admin/admin.component';
 import { RequestForMaintenanceComponent} from '../Teacher/request-for-maintenance/request-for-maintenance.component';
 import {AskForAdvancePaymentComponent} from '../Teacher/ask-for-advance-payment/ask-for-advance-payment.component';
+import { DeclareholidayComponent } from '../Admin/declareholiday/declareholiday.component';
+import { ApproveLeaveApplicationComponent } from '../Admin/approve-leave-application/approve-leave-application.component';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
+  {path: 'declareholiday', component: DeclareholidayComponent},
   {path: 'teachers', component: TeacherComponent, canActivate: [GuardService]},
   {path: 'admin', component: AdminComponent, canActivate: [GuardService]},
   {path: 'accountLogIn', component: AccountLoginComponent  },
@@ -23,6 +26,7 @@ const routes: Routes = [
   {path: 'leaveApplication', component: LeaveApplicationComponent, canActivate: [GuardService]},
   {path: 'reqMantenance', component: RequestForMaintenanceComponent, canActivate: [GuardService]},
   {path: 'advPayment', component: AskForAdvancePaymentComponent, canActivate: [GuardService]},
+  {path: 'approveLeave', component: ApproveLeaveApplicationComponent, canActivate: [GuardService]},
 ];
 
 @NgModule({
