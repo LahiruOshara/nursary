@@ -50,7 +50,9 @@ app.use('/users',users);
 //teacher routes
 const teachers= require('./routes/teacherRoutes');
 app.use('/teachers',teachers);
-
+//student routes
+const students=require('./routes/studentRoutes');
+app.use('/student',students)
 
 //start server
  app.listen(port,()=>{
