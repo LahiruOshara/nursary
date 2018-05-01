@@ -1,26 +1,84 @@
-.details{
- list-style-type: none;
 
-
-}
-.details li{
-  margin: 10px 0;
-
-}
 /* Add padding to containers */
 .container {
   padding: 16px;
   margin-left: 18%;
 }
-
-
-/* Set a style for all buttons */
-button {
-  background-color: #008CBA;
+.selected {
+  background-color: #CFD8DC !important;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 80%;
 }
+
+
+.list {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+.list li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+.list li.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;
+}
+
+.list li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.list .text {
+  position: relative;
+  top: -3px;
+}
+
+.list .badge {
+
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+
+}
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  height:50%;
+  overflow-y: hidden;
+  width:100%;
+  margin-left: 300px;
+  margin-top: -90px
+
+}
+
+.btn{display:inline-block;padding:6px 12px;margin-bottom:0;
+  font-size:14px;font-weight:400;line-height:1.42857143;
+  text-align:center;white-space:nowrap;vertical-align:middle;
+  -ms-touch-action:manipulation;touch-action:manipulation;
+  cursor:pointer;-webkit-user-select:none;-moz-user-select:none;
+  -ms-user-select:none;user-select:none;background-image:none;
+  border:1px solid transparent;border-radius:4px }
+
+  .btn-success.focus,.btn-success:focus{color:#fff;
+    background-color:#449d44;
+    border-color:#255625}
+  .btn-success:hover{color:#fff;
+    background-color:#449d44;
+    border-color:#398439}
