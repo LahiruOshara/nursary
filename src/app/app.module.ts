@@ -27,6 +27,9 @@ import { RequestForMaintenanceComponent } from './Teacher/request-for-maintenanc
 import { AskForAdvancePaymentComponent} from './Teacher/ask-for-advance-payment/ask-for-advance-payment.component';
 import { DeclareholidayComponent } from './Admin/declareholiday/declareholiday.component';
 import { ApproveLeaveApplicationComponent} from './Admin/approve-leave-application/approve-leave-application.component';
+import { AdminLinkGuardService } from './services/admin-link-guard.service';
+import { TeacherLinkGuardService } from './services/teacher-link-guard.service';
+import { StudentLinkGuardService } from './services/student-link-guard.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +56,7 @@ import { ApproveLeaveApplicationComponent} from './Admin/approve-leave-applicati
     AppRoutingModule,
     FlashMessagesModule.forRoot(),
   ],
-  providers: [TeacherService, ValidateService, AuthenticationService, GuardService, LeaveAppServiceService],
+  providers: [TeacherService, ValidateService, AuthenticationService, GuardService, LeaveAppServiceService, AdminLinkGuardService, TeacherLinkGuardService, StudentLinkGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

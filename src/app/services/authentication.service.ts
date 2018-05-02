@@ -60,8 +60,11 @@ export class AuthenticationService {
     return !(localStorage.getItem('id_token') === null);
   }
 
-
+  returnType() {
+    return (localStorage.getItem('type'));
+  }
 }
+
 
 
 interface RegularResponse {
