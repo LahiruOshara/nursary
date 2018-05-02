@@ -1,5 +1,31 @@
-<ul>
-  <li *ngFor="let application of applications">
-    <span class="badge">{{application.username}}</span>{{application.sdate}}{{application.edate}}{{application.reason}}
+<app-nav-bar></app-nav-bar>
+<app-admin-side-bar></app-admin-side-bar>
+
+<ul class="list">
+  <li *ngFor="let application of applications"
+  (click)="onSelect(application)"
+  [class.selected]="application === selectedAppliation"
+  >
+    <span class="badge">{{application.regNo}}</span>{{application.name}}
+
+    
+
   </li>
+  <div *ngIf="selectedAppliation" class="">
+     
+      <form class="container"  (submit)="onFormSubmit()" >
+        <label for="sdate" style="color: #4c5552">starting date &#8658;</label> {{selectedAppliation.sDate}} <br>
+        <label for="edate"  style="color: #4c5552">end date &#8658;</label>{{selectedAppliation.eDate}} <br>
+        <label for="reason"  style="color: #4c5552">reason &#8658;</label>{{selectedAppliation.reason}} <br>
+        <label for="comment"  style="color: #4c5552">comment</label>
+        <textarea name="comment" id="" cols="30" rows="10"></textarea>
+        <ul class="middleList">
+            <input type="radio" value="Accept" name="gender"  checked>Accept  <input type="radio" value="Decline" name="gender"  >Decline 
+        </ul><br>
+        <button type="submit" class="btn btn-success">submit</button>
+      </form><br>
+    </div>
 </ul>
+
+
+
