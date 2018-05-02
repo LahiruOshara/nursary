@@ -73,3 +73,7 @@ module.exports.comparePassword=function(candidatePassword,hash,callback){
     callback(null,isMatch);
   });
 }
+
+module.exports.getUserCollecion=function(userType,callback){
+  User.find({accountType:userType},callback);
+}
