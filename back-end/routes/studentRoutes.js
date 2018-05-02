@@ -12,5 +12,4 @@ router.get('/getStudentDetails',function(req,res,next){
     });
 });
 
-
 module.exports=router;
