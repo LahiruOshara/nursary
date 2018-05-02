@@ -52,23 +52,25 @@ export class AccountRegisterComponent implements OnInit {
     if (!this.validateService.validateEmail(this.email)) {
       console.log('enter valid email');
       return false;
-    } else {
-      console.log(user);
     }
+    if (!this.validateService.validatePhoneNo(this.mobileNo)) {
+      console.log('enter valid phone number');
+      return false;
+    }
+    console.log(user);
 
     // register user
     this.authService.registerUser(user).subscribe(data => {
       console.log('Trying to register');
       if (data.success) {
         console.log('Successfully registered');
-        this.router.navigate(['teachers']);
+        // this.router.navigate(['teachers']);
       } else {
         console.log(data);
         console.log('Something went wrong');
       }
     });
   }
-
 
   // giving access only to the appropiate user
   onClickReg() {
@@ -81,10 +83,11 @@ export class AccountRegisterComponent implements OnInit {
       this.router.navigate(['Home']);
       return false;
     }
-    /*if ( type === 'Student') {
+    if ( type === 'Student') {
       this.router.navigate(['Home']);
       return false;
-    }*/
+    }
+    this.router.navigate(['Home']);
     return false;
   }
 }
