@@ -20,14 +20,22 @@ export class ApproveLeaveApplicationComponent implements OnInit {
     });
   }
 
-  onSelect(application: any): void {
-    // console.log(application);
+  onSelect(application: Application): void {
+    console.log(application);
     this.selectedApplication = application;
-    console.log(this.selectedApplication);
+   // console.log(this.selectedApplication);
   }
 
   onFormSubmit() {
     return true;
   }
 
+}
+
+
+interface Application {
+  username: string;
+  edate: string;
+  sdate: string;
+  reason: string;
 }
