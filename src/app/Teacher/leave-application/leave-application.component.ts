@@ -26,7 +26,7 @@ export class LeaveApplicationComponent implements OnInit {
 
   onFormSubmit() {
     const leaveApplication = {
-      username: this.username,
+      username: localStorage.getItem('username'),
       sdate: this.sdate,
       edate: this.edate,
       reason: this.reason

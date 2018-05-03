@@ -3,20 +3,18 @@
 
 <ul class="list">
   <li *ngFor="let application of applications"
+  [class.selected]="application === selectedApplication"
   (click)="onSelect(application)"
-  [class.selected]="application === selectedAppliation"
   >
-    <span class="badge">{{application.regNo}}</span>{{application.name}}
-
-    
-
+    <span class="badge">$</span>{{application.username}}
   </li>
-  <div *ngIf="selectedAppliation" class="">
+
+  <div *ngIf="selectedApplication" >
      
-      <form class="container"  (submit)="onFormSubmit()" >
-        <label for="sdate" style="color: #4c5552">starting date &#8658;</label> {{selectedAppliation.sDate}} <br>
-        <label for="edate"  style="color: #4c5552">end date &#8658;</label>{{selectedAppliation.eDate}} <br>
-        <label for="reason"  style="color: #4c5552">reason &#8658;</label>{{selectedAppliation.reason}} <br>
+      <form class="container" >
+        <label for="sdate" style="color: #4c5552">starting date &#8658;</label> {{selectedApplication.sdate}} <br>
+        <label for="edate"  style="color: #4c5552">end date &#8658;</label>{{selectedApplication.edate}} <br>
+        <label for="reason"  style="color: #4c5552">reason &#8658;</label>{{selectedApplication.reason}} <br>
         <label for="comment"  style="color: #4c5552">comment</label>
         <textarea name="comment" id="" cols="30" rows="10"></textarea>
         <ul class="middleList">

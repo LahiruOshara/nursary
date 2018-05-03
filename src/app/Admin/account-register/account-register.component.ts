@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ValidateService } from '../../services/validate.service';
 import {AuthenticationService} from '../../services/authentication.service';
 import {Router} from '@angular/router';
+import { FlashMessagesService} from 'angular2-flash-messages';
 
 
 @Component({
@@ -24,7 +25,8 @@ export class AccountRegisterComponent implements OnInit {
 
   constructor(private validateService: ValidateService,
     private authService: AuthenticationService,
-    private router: Router
+    private router: Router,
+    private messages: FlashMessagesService,
   ) { }
 
   ngOnInit() {
@@ -45,16 +47,22 @@ export class AccountRegisterComponent implements OnInit {
     console.log( 'Submit button pressed' );
     // validating
     if (!this.validateService.validateRegister(user)) {
-      console.log('fill in all fields');
+      this.messages.show( 'Fill in all fields', {
+        cssClass: 'alert-danger',
+        timeOut: 5000 });
       return false;
     }
 
     if (!this.validateService.validateEmail(this.email)) {
-      console.log('enter valid email');
+      this.messages.show( 'Enter valid email', {
+        cssClass: 'alert-danger',
+        timeOut: 5000 });
       return false;
     }
     if (!this.validateService.validatePhoneNo(this.mobileNo)) {
-      console.log('enter valid phone number');
+      this.messages.show( 'Enter valid phone number', {
+        cssClass: 'alert-danger',
+        timeOut: 5000 });
       return false;
     }
     console.log(user);
@@ -63,7 +71,9 @@ export class AccountRegisterComponent implements OnInit {
     this.authService.registerUser(user).subscribe(data => {
       console.log('Trying to register');
       if (data.success) {
-        console.log('Successfully registered');
+        this.messages.show( 'Successfully Registerd', {
+          cssClass: 'alert-danger',
+          timeOut: 5000 });
         // this.router.navigate(['teachers']);
       } else {
         console.log(data);
