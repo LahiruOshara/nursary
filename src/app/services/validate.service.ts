@@ -30,8 +30,15 @@ export class ValidateService {
     }return false;
   }
 
+  // validate leave form
   validateLeaveForm(form) {
     if (form.username === undefined || form.edate === undefined || form.sdate === undefined || form.reason === undefined ) {
+      return false;
+    }return true;
+  }
+  // validate advanced payment form
+  validateAdvForm(form) {
+    if ( form.username === undefined || form.amount === undefined || form.reason === undefined) {
       return false;
     }return true;
   }

@@ -38,7 +38,8 @@ router.get('/approveLeave',function(req,res,next){
 router.post('/advPayment',(req,res,next)=>{
     let application=new advPaymentForm({
         username:req.body.username,
-        amount:req.body.amount
+        amount:req.body.amount,
+        reason:req.body.reason
     });
 
     advPaymentForm.recordApplication(application,(error,application)=>{

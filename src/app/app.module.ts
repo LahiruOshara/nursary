@@ -30,6 +30,7 @@ import { ApproveLeaveApplicationComponent} from './Admin/approve-leave-applicati
 import { AdminLinkGuardService } from './services/admin-link-guard.service';
 import { TeacherLinkGuardService } from './services/teacher-link-guard.service';
 import { StudentLinkGuardService } from './services/student-link-guard.service';
+import { AdvPaymentFormService } from './services/adv-payment-form.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +57,7 @@ import { StudentLinkGuardService } from './services/student-link-guard.service';
     AppRoutingModule,
     FlashMessagesModule.forRoot(),
   ],
-  providers: [TeacherService, ValidateService, AuthenticationService, GuardService, LeaveAppServiceService, AdminLinkGuardService, TeacherLinkGuardService, StudentLinkGuardService],
+  providers: [TeacherService, ValidateService, AuthenticationService, GuardService, LeaveAppServiceService, AdminLinkGuardService, TeacherLinkGuardService, StudentLinkGuardService, AdvPaymentFormService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

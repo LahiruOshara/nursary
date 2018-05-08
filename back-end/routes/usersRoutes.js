@@ -51,7 +51,6 @@ router.post('/authenticate',(req,res,next)=>{
       res.json({
         success:true,
         token:token,
-        username:username,
         user:{
           id:user._id,
           accountType:user.accountType,

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { ValidateService } from '../../services/validate.service';
 import { FlashMessagesService} from 'angular2-flash-messages';
 import { LeaveAppServiceService } from '../../services/leave-app-service.service';
@@ -19,14 +18,14 @@ export class LeaveApplicationComponent implements OnInit {
   constructor(private validateService: ValidateService,
     private messages: FlashMessagesService,
     private leaveAppService: LeaveAppServiceService,
-    private router: Router
   ) { }
   ngOnInit() {
+    this.username = localStorage.getItem('username');
   }
 
   onFormSubmit() {
     const leaveApplication = {
-      username: localStorage.getItem('username'),
+      username: this.username,
       sdate: this.sdate,
       edate: this.edate,
       reason: this.reason
@@ -43,6 +42,7 @@ export class LeaveApplicationComponent implements OnInit {
       this.messages.show( 'Dates are not valid', {
         cssClass: 'alert-danger',
         timeOut: 5000 });
+        return false;
     }
 
     // console.log(leaveApplication);
