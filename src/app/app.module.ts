@@ -31,6 +31,8 @@ import { AdminLinkGuardService } from './services/admin-link-guard.service';
 import { TeacherLinkGuardService } from './services/teacher-link-guard.service';
 import { StudentLinkGuardService } from './services/student-link-guard.service';
 import { AdvPaymentFormService } from './services/adv-payment-form.service';
+import { StudentInfoService } from './services/student-info.service';
+import { DisplayStudentComponent } from './Teacher/display-student/display-student.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +50,8 @@ import { AdvPaymentFormService } from './services/adv-payment-form.service';
     RequestForMaintenanceComponent,
     AskForAdvancePaymentComponent,
     DeclareholidayComponent,
-    ApproveLeaveApplicationComponent
+    ApproveLeaveApplicationComponent,
+    DisplayStudentComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,7 @@ import { AdvPaymentFormService } from './services/adv-payment-form.service';
     AppRoutingModule,
     FlashMessagesModule.forRoot(),
   ],
-  providers: [TeacherService, ValidateService, AuthenticationService, GuardService, LeaveAppServiceService, AdminLinkGuardService, TeacherLinkGuardService, StudentLinkGuardService, AdvPaymentFormService],
+  providers: [TeacherService, ValidateService, AuthenticationService, GuardService, LeaveAppServiceService, AdminLinkGuardService, TeacherLinkGuardService, StudentLinkGuardService, AdvPaymentFormService, StudentInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

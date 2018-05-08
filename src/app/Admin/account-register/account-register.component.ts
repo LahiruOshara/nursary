@@ -72,7 +72,7 @@ export class AccountRegisterComponent implements OnInit {
       console.log('Trying to register');
       if (data.success) {
         this.messages.show( 'Successfully Registerd', {
-          cssClass: 'alert-danger',
+          cssClass: 'alert-success',
           timeOut: 5000 });
         // this.router.navigate(['teachers']);
       } else {

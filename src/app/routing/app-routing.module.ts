@@ -16,7 +16,7 @@ import { DeclareholidayComponent } from '../Admin/declareholiday/declareholiday.
 import { ApproveLeaveApplicationComponent } from '../Admin/approve-leave-application/approve-leave-application.component';
 import { AdminLinkGuardService} from '../../app/services/admin-link-guard.service';
 import { TeacherLinkGuardService} from '../../app/services/teacher-link-guard.service';
-
+import { DisplayStudentComponent} from '../../app/Teacher/display-student/display-student.component';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
@@ -30,6 +30,7 @@ const routes: Routes = [
   {path: 'reqMantenance', component: RequestForMaintenanceComponent, canActivate: [GuardService]},
   {path: 'advPayment', component: AskForAdvancePaymentComponent, canActivate: [GuardService]},
   {path: 'approveLeave', component: ApproveLeaveApplicationComponent, canActivate: [AdminLinkGuardService]},
+  {path: 'studentDetails', component: DisplayStudentComponent, canActivate: [TeacherLinkGuardService]},
 ];
 
 @NgModule({

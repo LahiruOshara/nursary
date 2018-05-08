@@ -42,11 +42,13 @@ export class AskForAdvancePaymentComponent implements OnInit {
         this.messages.show( 'Submited', {
           cssClass: 'alert-success',
           timeOut: 300 });
+          return true;
 
       } else {
         this.messages.show( data.msg, {
         cssClass: 'alert-danger',
         timeOut: 5000 });
+        return false;
       }
     });
 
