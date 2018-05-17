@@ -6,12 +6,12 @@ import { StudentInfoService} from '../../services/student-info.service';
   styleUrls: ['./display-student.component.css']
 })
 export class DisplayStudentComponent implements OnInit {
-  student: any;
+  studentList: any;
   constructor(private infoService: StudentInfoService) { }
 
   ngOnInit() {
     this.infoService.getInfo().subscribe(data => {
-      this.student = data;
+      this.studentList = data;
       console.log(data);
     }, error => {
         console.log(error);

@@ -9,7 +9,9 @@ import { Profile } from 'selenium-webdriver/firefox';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  user: Object;
+  user: {username: string,
+      email: string
+      accountType: string};
   constructor(private authenticationService: AuthenticationService, private router: Router) { }
 
   ngOnInit() {

@@ -1,7 +1,22 @@
-<p>
-  display-student works!
-</p>
-{{student}}
-<li *ngFor="let one of student">
-  {{one.username}}
+<app-teacher-side-bar></app-teacher-side-bar>
+
+<li *ngFor="let student of studentList">
+  {{student.username}}
 </li>
+
+
+<table id="customers">
+  <tr>
+    <th>Name</th> 
+    <th>Username</th>
+    <th>Address</th>
+    <th>Phone Number</th>
+  </tr>
+  <tr *ngFor="let student of studentList">
+      <td>{{student.firstName}} {{student.middleName}} {{student.lastName}}</td>
+    <td>{{student.username}}</td>
+    <td>{{student.address}}</td>
+    <td>{{student.mobileNo}}</td>
+  </tr>
+  
+</table>
