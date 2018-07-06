@@ -4,17 +4,18 @@
 
 <h1 style = "text-align : center"> Declare a holiday </h1>
 
-<form (submit)="onRegisterSubmit()">
+<form (submit)="onSubmit()">
 
   <div class="container">
     <label><b>Date</b></label>
-    <input [(ngModel)]= "Date" name='firstName' type="date" placeholder="Name" required>
+    <input [(ngModel)]= "date" name='date' type="date" required>
     <br><br><br>
 
     <label><b>Reason</b></label>
 
-        <input class="resizedText" [(ngModel)]="reason" name='reason'type="text" placeholder="" required>
+        <input class="resizedText" [(ngModel)]="reason" name='reason'type="text" placeholder="Reason" required>
 
     <button type="submit">submit</button>
   </div>
 </form>
+<flash-messages></flash-messages>
