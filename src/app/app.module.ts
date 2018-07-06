@@ -60,6 +60,7 @@ import { DisplayStudentComponent } from './Teacher/display-student/display-stude
     AppRoutingModule,
     FlashMessagesModule.forRoot(),
   ],
+  // tslint:disable-next-line:max-line-length
   providers: [TeacherService, ValidateService, AuthenticationService, GuardService, LeaveAppServiceService, AdminLinkGuardService, TeacherLinkGuardService, StudentLinkGuardService, AdvPaymentFormService, StudentInfoService],
   bootstrap: [AppComponent]
 })

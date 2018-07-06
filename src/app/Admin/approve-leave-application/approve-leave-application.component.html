@@ -1,6 +1,7 @@
 <app-nav-bar></app-nav-bar>
 <app-admin-side-bar></app-admin-side-bar>
 
+<div class="center">
 <ul class="list">
   <li *ngFor="let application of applications"
   [class.selected]="application === selectedApplication"
@@ -24,6 +25,6 @@
       </form><br>
     </div>
 </ul>
-
+</div>
 
 

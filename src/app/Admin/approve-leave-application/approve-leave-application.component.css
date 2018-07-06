@@ -82,3 +82,12 @@
   .btn-success:hover{color:#fff;
     background-color:#449d44;
     border-color:#398439}
+
+.center{
+  margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+
+

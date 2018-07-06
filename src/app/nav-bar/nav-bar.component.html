@@ -1,8 +1,8 @@
 <div class="topnav">
-  <nav *ngIf="!authenticationService.loggedIn()"><a href='/'>Home</a></nav>
-  <nav *ngIf="authenticationService.loggedIn()"><a (click)="onClickHome()">Home</a></nav>
-  <nav *ngIf="authenticationService.loggedIn()" ><a routerLinkActive='active' routerLink="/profile" [routerLinkActiveOptions]="{exact:true}"> Profile</a></nav>
-  <nav *ngIf="authenticationService.loggedIn()"><a (click)="onLogoutClick()" href="#"> Logout</a></nav>
+  <nav *ngIf="!getAuthenticationService().loggedIn()"><a href='/'>Home</a></nav>
+  <nav *ngIf="getAuthenticationService().loggedIn()"><a (click)="onClickHome()">Home</a></nav>
+  <nav *ngIf="getAuthenticationService().loggedIn()" ><a routerLinkActive='active' routerLink="/profile" [routerLinkActiveOptions]="{exact:true}"> Profile</a></nav>
+  <nav *ngIf="getAuthenticationService().loggedIn()"><a (click)="onLogoutClick()" href="#"> Logout</a></nav>
 </div>
 
 
