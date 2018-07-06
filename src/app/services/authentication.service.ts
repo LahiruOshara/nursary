@@ -39,6 +39,7 @@ export class AuthenticationService {
     // console.log(token);
     localStorage.setItem('user', JSON.stringify(user));
     localStorage.setItem('type', user.accountType);
+    localStorage.setItem('username', user.username);
     this.token = token;
     this.user = user;
   }
@@ -60,8 +61,11 @@ export class AuthenticationService {
     return !(localStorage.getItem('id_token') === null);
   }
 
-
+  returnType() {
+    return (localStorage.getItem('type'));
+  }
 }
+
 
 
 interface RegularResponse {

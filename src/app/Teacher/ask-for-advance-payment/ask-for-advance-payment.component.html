@@ -3,30 +3,17 @@
 <form (submit)="onFormSubmit()">
 
   <div class="container"> 
-    <label><b>Username</b></label>
-    <input [(ngModel)]="username" name='username'#name="ngModel" type="text" placeholder="Username" required>
-    <div [hidden]="name.valid || name.pristine"
-          class="alert alert-danger">
-             username is required
-         </div>
-    <br><br>
+    <label><b>Username : </b></label>{{username}}
 
+    <br><br>
     <label><b>Amount(in LKR)</b></label>
     <input [(ngModel)]="amount" name='amount' #name1="ngModel" width="10%" type="text" required >
-    <div [hidden]="name1.valid || name1.pristine"
-          class="alert alert-danger">
-             Amount is required
-         </div>
-    
     <br>
 
     <label ><b>Reason</b></label>
     <input class="resizedText" [(ngModel)]="reason" name='reason' #name2="ngModel" type="text" placeholder="Type here" required>
-    <div [hidden]="name2.valid || name2.pristine"
-          class="alert alert-danger">
-             Reason is required
-         </div>
-    
+
     <button type="submit">submit</button>
   </div>
 </form>
+<flash-messages></flash-messages>

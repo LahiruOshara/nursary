@@ -9,6 +9,10 @@ const advPaymentSchema= mongoose.Schema({
     amount:{
         type:String,
         required:true
+    },
+    reason:{
+        type:String,
+        required:true
     }
 })
 

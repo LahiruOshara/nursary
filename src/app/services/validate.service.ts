@@ -30,8 +30,15 @@ export class ValidateService {
     }return false;
   }
 
+  // validate leave form
   validateLeaveForm(form) {
     if (form.username === undefined || form.edate === undefined || form.sdate === undefined || form.reason === undefined ) {
+      return false;
+    }return true;
+  }
+  // validate advanced payment form
+  validateAdvForm(form) {
+    if ( form.username === undefined || form.amount === undefined || form.reason === undefined) {
       return false;
     }return true;
   }
@@ -43,6 +50,11 @@ export class ValidateService {
       return true;
     }return false;
 
+  }
+
+  validatePhoneNo(number) {
+    const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+    return re.test(String(number));
   }
 
 

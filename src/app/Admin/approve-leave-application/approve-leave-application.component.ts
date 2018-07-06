@@ -8,6 +8,7 @@ import { LeaveAppServiceService} from '../../services/leave-app-service.service'
 })
 export class ApproveLeaveApplicationComponent implements OnInit {
   applications: any;
+  selectedApplication: any;
   constructor(private leaveAppService: LeaveAppServiceService) { }
 
   ngOnInit() {
@@ -19,4 +20,22 @@ export class ApproveLeaveApplicationComponent implements OnInit {
     });
   }
 
+  onSelect(application: Application): void {
+    console.log(application);
+    this.selectedApplication = application;
+   // console.log(this.selectedApplication);
+  }
+
+  onFormSubmit() {
+    return true;
+  }
+
+}
+
+
+interface Application {
+  username: string;
+  edate: string;
+  sdate: string;
+  reason: string;
 }
