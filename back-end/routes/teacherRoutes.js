@@ -1,9 +1,10 @@
 const express=require('express');
 const router= express.Router();
-
+const salarySheet=require('../models/salarysheet');
 const leaveApplication=require('../models/leaveApplication');
 const advPaymentForm=require('../models/advancedPaymentForm');
 const config=require('../config/database');
+
 
 // saving the leave application
 router.post('/leaveApplication',(req,res,next)=>{
@@ -52,7 +53,14 @@ router.post('/advPayment',(req,res,next)=>{
         }
     });
 });
-
+//getting the salary sheet data 
+router.get('/salarySheet',function (res,req,next) {
+    salarySheet.getApplications({},(error,applications)=>{
+        if(error)throw error;
+        res.json({applications});
+        
+    });
+});
 
 
 module.exports=router;
