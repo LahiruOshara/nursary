@@ -3,7 +3,9 @@ const router= express.Router();
 const salarySheet=require('../models/salarysheet');
 const leaveApplication=require('../models/leaveApplication');
 const advPaymentForm=require('../models/advancedPaymentForm');
+const maintenanceDetailsForm=require('../models/maintenanceDetails');
 const config=require('../config/database');
+
 
 
 // saving the leave application
@@ -61,6 +63,56 @@ router.get('/salarySheet',function (res,req,next) {
         
     });
 });
+//saving the salary sheet
+router.post('/salarySheet',(req,res,next)=>{
+    let application=new salarySheet({
+        username:req.body.username,
+        Month:req.body.Month,
+        Days:req.body.Days,
+        leaves:req.body.leaves,
+        Amount:req.body.Amount,
+        Balance:req.body.Balance
 
+    });
+    salarySheet.recordApplication(application,(error,application)=>{
+        if(error){
+            console.log('Error'+error)
+            res.json({success:false,msg:"Faild to process the request"});
+        }else{
+            console.log('success');
+            res.json({success:true,msg:"reqest sent"});
+        }
+    });
+
+});
+// getting maintenance details
+router.get('/requestMaintenance',function(req,res,next){
+    maintenanceDetailsForm.getApplications({},(error,application)=>{
+        if(error)throw error
+        res.json({application});
+
+    });
+});
+//saving maintenance details
+router.post('/requestMaintenance',(req,res,next)=>{
+    let maintenanceForm=new  maintenanceDetailsForm({
+        username:req.body.username,
+        briefDescription:req.body.briefDescription
+
+    }); 
+    maintenanceDetailsForm.recordApplication(application,(error,application)=>{
+        if(error){
+            console.log('Error'+error)
+            res.json({success:false,msg:"Faild to process the request"});
+        }else{
+            console.log('success');
+            res.json({success:true,msg:"reqest sent"});
+        }
+
+    });
+ 
+
+});
 
 module.exports=router;
+

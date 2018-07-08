@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 export class MarkTheAttendanceComponent implements OnInit {
 
   constructor() { }
-
+  
   ngOnInit() {
   }
 

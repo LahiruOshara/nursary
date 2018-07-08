@@ -1,7 +1,11 @@
 export class MaintenanceRequestForm {
-  public regNo: string;
+ 
   public name: string;
   public briefDescription: string;
 
-  constructor() {}
+  constructor(name,briefDescription) {
+    this.name=name,
+    this.briefDescription=briefDescription
+  }
+
 }

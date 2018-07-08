@@ -28,7 +28,7 @@ const routes: Routes = [
   {path: 'accountRegister', component: AccountRegisterComponent, canActivate: [AdminLinkGuardService]},
   {path: 'profile', component: ProfileComponent, canActivate: [GuardService]},
   {path: 'leaveApplication', component: LeaveApplicationComponent, canActivate: [TeacherLinkGuardService]},
-  {path: 'reqMantenance', component: RequestForMaintenanceComponent, canActivate: [GuardService]},
+  {path: 'reqMantenance', component: RequestForMaintenanceComponent, },
   {path: 'advPayment', component: AskForAdvancePaymentComponent, canActivate: [GuardService]},
   {path: 'approveLeave', component: ApproveLeaveApplicationComponent, canActivate: [AdminLinkGuardService]},
   {path: 'studentDetails', component: DisplayStudentComponent, },

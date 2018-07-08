@@ -1,38 +1,20 @@
 const mongoose=require('mongoose');
 const config=require('../config/database');
 
-const salarySheetSchema=mongoose.Schema(
-    {   
+const maintenanceFormSchema=mongoose.Schema(
+    {
         username:{
             type:String,
             required:true
         },
-
-        Month:{type:String,
-            required:true
-        },
-        Days:{
-            type: String,
-            required:true
-        },
-        leaves:{
-            type :String,
-            required:false
-
-        },
-        Amount:{
+        briefDescription:{
             type:String,
             required:true
-        },
-        Balance:{
-            type:String,
-            required:true
-        }
-       
 
+        } 
     }
 );
-const salarySheet=module.exports = mongoose.model('salarySheet',salarySheetSchema);
+const maintenanceForm=module.exports = mongoose.model('maintenanceForm',salarySheetSchema);
 
 module.exports.recordApplication= function(application,callback){
     //console.log("saving the application");
