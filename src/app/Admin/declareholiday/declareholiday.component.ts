@@ -43,7 +43,6 @@ export class DeclareholidayComponent implements OnInit {
           timeOut: 5000 });
         // this.router.navigate(['teachers']);
       } else {
-        console.log(data);
         console.log('Something went wrong');
       }
     });
