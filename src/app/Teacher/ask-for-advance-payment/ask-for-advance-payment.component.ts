@@ -22,7 +22,7 @@ export class AskForAdvancePaymentComponent implements OnInit {
   }
 
   onFormSubmit() {
-    const advPaymentForm = {
+    const advPaymentForm = {//json object
       username: this.username,
       amount: this.amount,
       reason: this.reason

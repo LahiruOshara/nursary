@@ -14,7 +14,7 @@ const maintenanceFormSchema=mongoose.Schema(
         } 
     }
 );
-const maintenanceForm=module.exports = mongoose.model('maintenanceForm',salarySheetSchema);
+const maintenanceForm=module.exports = mongoose.model('maintenanceForm',maintenanceFormSchema);
 
 module.exports.recordApplication= function(application,callback){
     //console.log("saving the application");
@@ -23,7 +23,7 @@ module.exports.recordApplication= function(application,callback){
 }
 
 
-module.exports.getApplications=function(application,callback){
-    application.find(application,callback);
+module.exports.getApplications=function(callback){
+    maintenanceForm.find(callback);
     console.log("fine")
   }

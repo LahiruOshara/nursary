@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MaintenanceRequestForm} from './maintenance-request-form';
 import { ValidateService } from '../../services/validate.service';
 import { FlashMessagesService} from 'angular2-flash-messages';
 import {MaintenanceDetailService} from '../../services/maintenance-detail.service';
@@ -12,7 +11,7 @@ export class RequestForMaintenanceComponent implements OnInit {
    
    name: string;
    briefDescription: string;
-   maintenanceApplication:MaintenanceRequestForm
+ 
   
   constructor(private validateService: ValidateService,
     private messages: FlashMessagesService,
@@ -25,10 +24,11 @@ export class RequestForMaintenanceComponent implements OnInit {
    
   }
   onFormSubmit() {
-    this.maintenanceApplication = new MaintenanceRequestForm( this.name,this.briefDescription );
-
-
-    if (!this.validateService.validateLeaveForm(this.maintenanceApplication)) {
+    let application={
+      name:this.name,
+      briefDescription:this.briefDescription
+    }
+  if (!this.validateService.validateLeaveForm(application)) {
       this.messages.show( 'Enter Details', {
         cssClass: 'alert-danger',
         timeOut: 5000 });
@@ -39,7 +39,7 @@ export class RequestForMaintenanceComponent implements OnInit {
 
     
     //console.log('application validated');
-    this.maintenanceDetailService.submitMaintenanceApplication(this.maintenanceApplication).subscribe(data => {
+    this.maintenanceDetailService.submitMaintenanceApplication(application).subscribe(data => {
       // console.log('Trying to register');
       if (data.success) {
         // console.log(data.msg);

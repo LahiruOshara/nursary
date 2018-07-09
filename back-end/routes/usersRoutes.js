@@ -2,9 +2,11 @@ const express=require('express');
 const router= express.Router();
 const passport=require('passport');
 const jwt=require('jsonwebtoken');
+const config=require('../config/database');
+const salarySheet=require('../models/salarysheet');
 
 const User=require('../models/user');
-const config=require('../config/database');
+
 
 //Register
 router.post('/register',(req,res,next)=>{
@@ -18,8 +20,12 @@ router.post('/register',(req,res,next)=>{
     email:req.body.email,
     username:req.body.username,
     password:req.body.password,
+    studentName:req.body.studentName,
+    teacherName:req.body.teacherName,
+    
   }); 
 
+  console.log(newUser);
   User.addUser(newUser,function(error,user){
     if(error){
       res.json({success:false,msg:'Failed to register user'});
@@ -76,4 +82,27 @@ router.get('/teacher',passport.authenticate('jwt',{session:false}),function(req,
   res.send();
 })
 
+// user
+router.post('/relevantUsers',(req,res,next)=>{
+  let relevantUser={//create a json type object
+    teacherName:req.body.teacherName,
+    accountType:req.body.accountType
+  }
+
+  User.getusersByStudentName(relevantUser,(error,studentName)=>{//carefull send correctly parent
+    if(error) throw error
+    res.json({studentName})
+  });
+  //tale relevanrt salary sheet
+  router.post('/salarySheet',(req,res,next)=>{
+  let username={username:req.body.username}
+   console.log(this.username)
+   salarySheet.getApplication(this.username,(error,application)=>{
+      if(error) throw error
+      res.json(application)
+
+   });
+  })
+
+});
 module.exports=router;

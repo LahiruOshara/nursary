@@ -34,8 +34,9 @@ import { AdvPaymentFormService } from './services/adv-payment-form.service';
 import { StudentInfoService } from './services/student-info.service';
 import { DisplayStudentComponent } from './Teacher/display-student/display-student.component';
 import { TransferSalaryDetailsService } from './services/transfer-salary-details.service';
-import { MarkTheAttendanceComponent } from './Teacher/mark-the-attendance/mark-the-attendance.component';
+
 import { MaintenanceDetailService } from './services/maintenance-detail.service';
+import {SalarySheetComponent} from './Teacher/salary-sheet/salary-sheet.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,9 @@ import { MaintenanceDetailService } from './services/maintenance-detail.service'
     DeclareholidayComponent,
     ApproveLeaveApplicationComponent,
     DisplayStudentComponent,
-    MarkTheAttendanceComponent
+  
+    SalarySheetComponent
+   
   ],
   imports: [
     BrowserModule,

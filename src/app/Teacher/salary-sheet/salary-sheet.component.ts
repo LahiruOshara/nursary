@@ -10,11 +10,17 @@ export class SalarySheetComponent implements OnInit {
 
   constructor(private salaryDetail:TransferSalaryDetailsService) { }
   details:any;
+  username:any
   ngOnInit() {
     this.getDetails();
   }
   getDetails(){
-    this.salaryDetail.getInfo().subscribe(data=>{this.details=data},
+    this.username=localStorage.getItem('username');
+    console.log(this.username)
+    this.salaryDetail.getInfo(this.username).subscribe(data=>{this.details=data
+      console.log(data);
+    },
+     
       error=>{console.log(error);return false}
     )
   }

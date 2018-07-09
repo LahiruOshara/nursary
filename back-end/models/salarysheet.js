@@ -40,8 +40,9 @@ module.exports.recordApplication= function(application,callback){
     //console.log("saved the application");
 }
 
-
-module.exports.getApplications=function(application,callback){
-    application.find(application,callback);
+//getting salary sheets
+module.exports.getApplication=function(username,callback){
+    console.log(username)
+   salarySheet.findOne(username,callback);
     console.log("fine")
   }

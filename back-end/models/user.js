@@ -41,6 +41,14 @@ const UserSchema= mongoose.Schema(
       type:String,
       required:true
     },
+    studentName:{
+      type:String,
+      required:false
+    },
+    teacherName:{
+      type:String,
+      required:false
+    }
 
   }
 );
@@ -60,6 +68,7 @@ module.exports.getUserByUsername=function(username,callback){
 module.exports.addUser=function(newUser,callback){
   bcrypt.genSalt(10,function(error,salt){
     bcrypt.hash(newUser.password,salt,function(error,hash){
+        console.log(newUser,salt,error);
         if(error) throw error;
         newUser.password=hash;
         newUser.save(callback);
@@ -76,4 +85,8 @@ module.exports.comparePassword=function(candidatePassword,hash,callback){
 
 module.exports.getUserCollecion=function(userType,callback){
   User.find({accountType:userType},callback);
+}
+module.exports.getusersByStudentName=function(releventUser,callback){
+  User.find(releventUser,callback);
+  console.log('success')
 }

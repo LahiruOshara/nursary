@@ -7,13 +7,13 @@ export class TransferSalaryDetailsService {
 
   constructor(private http: HttpClient) { }
 
-  getInfo(): Observable<any> {
+  getInfo(username): Observable<RegularResponse> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.get('http://localhost:4000/teacher/SalarySheet', {headers: headers}) as Observable<any>;
+    return this.http.post('http://localhost:4000/users/salarySheet',{username}, {headers: headers}) as Observable<RegularResponse>;
   }
   submitMaintenanceApplication(form): Observable<RegularResponse> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post('http://localhost:4000/teachers/SalarySheet', form, {headers: headers}) as Observable<RegularResponse>;
+    return this.http.post('http://localhost:4000/teachers/salarySheet', form, {headers: headers}) as Observable<RegularResponse>;
   }
 }
 

@@ -51,11 +51,11 @@ export class AccountLoginComponent implements OnInit {
           this.router.navigate(['teachers']);
           return true;
         }
-        /*
+        
         if (data.user.accountType === 'Student') {
           this.router.navigate(['admin']);
           return true;
-        }*/
+        }
       } else {
         this.messages.show(data.msg, {
           cssClass: 'alert-danger',
