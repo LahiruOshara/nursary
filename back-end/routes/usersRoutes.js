@@ -93,9 +93,16 @@ router.post('/relevantUsers',(req,res,next)=>{
     if(error) throw error
     res.json({studentName})
   });
-  //tale relevanrt salary sheet
-  
-  
-
 });
+  //tale relevanrt salary sheet
+  router.post('/salarySheet',(req,res,next)=>{
+   let username={username:req.body.username}
+   console.log(username)
+   salarySheet.getApplication(username,(error,application)=>{
+      if(error) throw error
+      res.json(application)
+
+   });
+  });
+
 module.exports=router;
