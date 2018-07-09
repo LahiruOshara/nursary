@@ -69,6 +69,11 @@ export class ValidateService {
     return re.test(String(number));
   }
 
+  validateTrasportRequest(form) {
+    if (form.from === undefined ) {
+      return false;
+    }return true;
+  }
 
 
 }
