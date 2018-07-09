@@ -9,7 +9,7 @@ import {MaintenanceDetailService} from '../../services/maintenance-detail.servic
 })
 export class RequestForMaintenanceComponent implements OnInit {
    
-   name: string;
+   username: string;
    briefDescription: string;
  
   
@@ -20,15 +20,17 @@ export class RequestForMaintenanceComponent implements OnInit {
 
 
   ngOnInit() {
-    this.name=localStorage.getItem("username");
+    this.username=localStorage.getItem("username");
    
   }
   onFormSubmit() {
+    console.log(this.briefDescription)
     let application={
-      name:this.name,
+      username:this.username,
       briefDescription:this.briefDescription
     }
-  if (!this.validateService.validateLeaveForm(application)) {
+
+  if (!this.validateService.validateMaintananceForm(application)) {
       this.messages.show( 'Enter Details', {
         cssClass: 'alert-danger',
         timeOut: 5000 });
