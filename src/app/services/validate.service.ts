@@ -74,7 +74,13 @@ export class ValidateService {
       return false;
     }return true;
   }
-
+  validatehomework(data){
+    if(data.homeWork === undefined || data.dueDate === undefined){
+      return false;
+    }else{
+      return true;
+    }
+  }
 
 }
 
