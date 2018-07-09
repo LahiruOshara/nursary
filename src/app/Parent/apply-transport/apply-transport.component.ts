@@ -26,9 +26,23 @@ export class ApplyTransportComponent implements OnInit {
       'username' : this.username,
       'from' : this.from
     };
-    console.log(temp);
+    /*console.log(temp);
     const res = this.parentService.submitTr(temp);
     console.log('here');
-    console.log(res);
+    console.log(res);*/
+
+    this.parentService.submitTr(temp).subscribe(data => {
+      console.log('Trying to register');
+      if (data.success) {
+        console.log('success');
+        /*this.messages.show( 'Successfully Declared', {
+          cssClass: 'alert-success',
+          timeOut: 5000 });
+        // this.router.navigate(['teachers']);*/
+      } else {
+        console.log(data);
+        console.log('Something went wrong');
+      }
+    });
   }
 }
