@@ -37,6 +37,7 @@ import { TransferSalaryDetailsService } from './services/transfer-salary-details
 
 import { MaintenanceDetailService } from './services/maintenance-detail.service';
 import {SalarySheetComponent} from './Teacher/salary-sheet/salary-sheet.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +58,8 @@ import {SalarySheetComponent} from './Teacher/salary-sheet/salary-sheet.componen
     ApproveLeaveApplicationComponent,
     DisplayStudentComponent,
   
-    SalarySheetComponent
+    SalarySheetComponent,
+
    
   ],
   imports: [
