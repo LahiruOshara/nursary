@@ -6,9 +6,10 @@ const advPaymentForm=require('../models/advancedPaymentForm');
 const maintenanceDetailsForm=require('../models/maintenanceDetails');
 const attendanceSheet=require('../models/Attendance');
 
+const holidayDec=require('../models/declareHoliday');
 
-// saving the leave application
-router.post('/leaveApplication',(req,res,next)=>{
+// saving the leave applicationRegister
+router.post('/leaveApplication',(req,res)=>{
     let application=new leaveApplication({
         username:req.body.username,
         sdate:req.body.sdate,
@@ -17,7 +18,7 @@ router.post('/leaveApplication',(req,res,next)=>{
         accept:req.body.accept
     });
 
-    leaveApplication.recordApplication(application,(error,application)=>{
+    leaveApplication.recordApplication(application,(error)=>{
         if (error){
             console.log('Error'+error);
             res.json({success:false,msg:'Faild to record'});
@@ -29,6 +30,7 @@ router.post('/leaveApplication',(req,res,next)=>{
 });
 
 // sending the leave application
+
 router.get('/approveLeave',function(req,res,next){  
     
     leaveApplication.getApplications((error,applications)=>{
@@ -59,14 +61,14 @@ router.post('/deleteApplication',(req,res,next)=>{
 });
 
 // saving the advanced payment application
-router.post('/advPayment',(req,res,next)=>{
+router.post('/advPayment',(req,res)=>{
     let application=new advPaymentForm({
         username:req.body.username,
         amount:req.body.amount,
         reason:req.body.reason
     });
 
-    advPaymentForm.recordApplication(application,(error,application)=>{
+    advPaymentForm.recordApplication(application,(error)=>{
         if (error){
             console.log('Error'+error);
             res.json({success:false,msg:'Faild to process the request'});
@@ -76,6 +78,7 @@ router.post('/advPayment',(req,res,next)=>{
         }
     });
 });
+
 
 //saving the salary sheet
 router.post('/salarySheet',(req,res,next)=>{
@@ -97,6 +100,34 @@ router.post('/salarySheet',(req,res,next)=>{
             res.json({success:true,msg:"reqest sent"});
         }
     });
+
+//recoding holiday
+router.post('/holiday',(req,res)=>{
+    let holiday=new holidayDec({
+        date:req.body.date,
+        reason:req.body.reason
+    });
+
+    holidayDec.record(holiday,(error)=>{
+        if (error){
+            console.log('Error'+error);
+            res.json({success:false,msg:'Faild to record'});
+        }else{
+            console.log('success');
+            res.json({success:true,msg:'Success'});
+        }
+    });
+});
+
+router.get('/holidayDec',function(req,res){  
+    holidayDec.getHolidays({},(error,holiday)=>{
+        if(error) throw error;
+        res.json({holiday});
+    });
+    //res.json({applications:applications});
+});
+
+
 
 });
 // getting maintenance details

@@ -108,6 +108,7 @@ input[type=date]{
     border-color:#398439}
 
 
+
 /* Set a style for all buttons */
 button {
   background-color: #008CBA;
@@ -173,3 +174,11 @@ span.psw {
 
 }
 .alert-danger hr{border-top-color:#e4b9c0;width:50%}
+=======
+.center{
+  margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+

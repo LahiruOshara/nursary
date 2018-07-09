@@ -46,10 +46,22 @@ export class ValidateService {
   validateDates(date1, date2) {
     const temp1 = new Date(date1);
     const temp2 = new Date(date2);
-    if (temp1 <= temp2) {
+    const today = new Date(); // today date
+
+    if (today < temp1 && today < temp2) {
+
+      if (temp1 <= temp2) {
+        return true;
+      }return false;
+    }return false;
+  }
+
+  validateDate(date1) {
+    const temp1 = new Date(date1);
+    const today = new Date(); // today date
+    if (today < temp1) {
       return true;
     }return false;
-
   }
   validateMaintananceForm(form){
     if ( form.username === undefined ||form.briefDescription === undefined) {
@@ -63,6 +75,11 @@ export class ValidateService {
     return re.test(String(number));
   }
 
+  validateTrasportRequest(form) {
+    if (form.from === undefined ) {
+      return false;
+    }return true;
+  }
 
 
 }

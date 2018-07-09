@@ -1,11 +1,14 @@
-<div *ngIf='user'>
-        <app-nav-bar></app-nav-bar>
-        <h2 style="text-align:center">{{user.name}} Profile Card</h2>
+<br><br>
+<h2 style="text-align:center">User Profile</h2>
 
-        <div class="card">
-          <h1>{{user.firstName}} {{user.middleName}} {{user.lastName}}</h1>
-          <p class="title">{{user.accountType}}</p>
-          <p>Nursery</p>
-        </div>
-        
-</div>
+<div class="card">
+    <br>
+  <img src="../../assets/profile.jpg" style="width:20%">
+  <h1>{{user.username}}</h1>
+  <h3><b>Name:</b> {{user.firstName}} {{user.middleName}} {{user.lastName}}</h3>
+  <h3><b>Account Type:</b> {{user.accountType}}</h3>
+  <h3><b>Address:</b> {{user.address}}</h3>
+  <h3><b>E-mail:</b> {{user.email}}</h3>
+  <h3><b>Mobile No:</b> {{user.mobileNo}}</h3>
+  
+  </div>
