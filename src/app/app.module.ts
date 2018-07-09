@@ -33,6 +33,15 @@ import { StudentLinkGuardService } from './services/student-link-guard.service';
 import { AdvPaymentFormService } from './services/adv-payment-form.service';
 import { StudentInfoService } from './services/student-info.service';
 import { DisplayStudentComponent } from './Teacher/display-student/display-student.component';
+import { DeclaareHolidayService } from './services/declaare-holiday.service';
+import { GetStudentComponent } from './Admin/get-student/get-student.component';
+import { ParentServicesService } from './services/parent-services.service';
+
+import { ParentSideBarComponent } from './Parent/parent-side-bar/parent-side-bar.component';
+import { ParentComponent } from './Parent/parent/parent.component';
+import { ApplyTransportComponent } from './Parent/apply-transport/apply-transport.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,8 +60,9 @@ import { DisplayStudentComponent } from './Teacher/display-student/display-stude
     AskForAdvancePaymentComponent,
     DeclareholidayComponent,
     ApproveLeaveApplicationComponent,
-    DisplayStudentComponent
-  ],
+    DisplayStudentComponent,
+    GetStudentComponent, ParentSideBarComponent, ParentComponent, ApplyTransportComponent],
+
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -61,7 +71,7 @@ import { DisplayStudentComponent } from './Teacher/display-student/display-stude
     FlashMessagesModule.forRoot(),
   ],
   // tslint:disable-next-line:max-line-length
-  providers: [TeacherService, ValidateService, AuthenticationService, GuardService, LeaveAppServiceService, AdminLinkGuardService, TeacherLinkGuardService, StudentLinkGuardService, AdvPaymentFormService, StudentInfoService],
+  providers: [TeacherService, ValidateService, AuthenticationService, GuardService, LeaveAppServiceService, AdminLinkGuardService, TeacherLinkGuardService, StudentLinkGuardService, AdvPaymentFormService, StudentInfoService, DeclaareHolidayService, ParentServicesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

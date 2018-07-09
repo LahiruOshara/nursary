@@ -12,7 +12,7 @@ const homeWorkSchema= mongoose.Schema({
     }
 })
 
-const homeWorkSchema=module.exports = mongoose.model('homeWork',homeWorkSchema);
+const homeWork=module.exports = mongoose.model('homeWork',homeWorkSchema);
 
 module.exports.recordApplication= function(application,callback){
     application.save(callback);

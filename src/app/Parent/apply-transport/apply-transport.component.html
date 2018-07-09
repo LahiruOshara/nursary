@@ -1,0 +1,15 @@
+<app-parent-side-bar></app-parent-side-bar>
+
+<form (submit)="onFormSubmit()">
+
+  <div class="container"> 
+    <label><b>Username : </b></label>{{username}}
+
+    <br><br>
+    <label><b>From :</b></label>
+    <input [(ngModel)]="from" name='from' #name1="ngModel" width="10%" type="text" required >
+    <br>
+    <button type="submit">submit</button>
+  </div>
+</form>
+<flash-messages></flash-messages>
