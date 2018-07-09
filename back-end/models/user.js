@@ -41,6 +41,10 @@ const UserSchema= mongoose.Schema(
       type:String,
       required:true
     },
+    teacherName:{
+      type:String,
+      required:false
+    },
 
   }
 );
@@ -76,4 +80,18 @@ module.exports.comparePassword=function(candidatePassword,hash,callback){
 
 module.exports.getUserCollecion=function(userType,callback){
   User.find({accountType:userType},callback);
+}
+
+module.exports.getUser=function(username,callback){
+  console.log(username);
+  User.find({ username : username,accountType:'Teacher'},callback);
+}
+
+module.exports.getUsers=function(username,callback){
+   console.log(username);
+   User.find({username:username},callback);
+}
+
+module.exports.users=function(callback){
+  User.find({},callback);
 }

@@ -18,6 +18,7 @@ router.post('/register',(req,res,next)=>{
     email:req.body.email,
     username:req.body.username,
     password:req.body.password,
+    teacherName:req.body.teacherName
   }); 
 
   User.addUser(newUser,function(error,user){
@@ -75,5 +76,12 @@ router.get('/profile',passport.authenticate('jwt',{session:false}),function(req,
 router.get('/teacher',passport.authenticate('jwt',{session:false}),function(req,res,next){  
   res.send();
 })
+
+router.get('/users',(req,res,next)=>{
+  User.users((err,users)=>{
+    if(err){ console.log("err")}
+    else{ res.json(users);}
+  });
+});
 
 module.exports=router;

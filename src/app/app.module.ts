@@ -40,6 +40,7 @@ import { ParentServicesService } from './services/parent-services.service';
 import { ParentSideBarComponent } from './Parent/parent-side-bar/parent-side-bar.component';
 import { ParentComponent } from './Parent/parent/parent.component';
 import { ApplyTransportComponent } from './Parent/apply-transport/apply-transport.component';
+import { ViweTeacherComponent } from './parent/viwe-teacher/viwe-teacher.component';
 
 
 @NgModule({
@@ -61,7 +62,7 @@ import { ApplyTransportComponent } from './Parent/apply-transport/apply-transpor
     DeclareholidayComponent,
     ApproveLeaveApplicationComponent,
     DisplayStudentComponent,
-    GetStudentComponent, ParentSideBarComponent, ParentComponent, ApplyTransportComponent],
+    GetStudentComponent, ParentSideBarComponent, ParentComponent, ApplyTransportComponent, ViweTeacherComponent],
 
   imports: [
     BrowserModule,

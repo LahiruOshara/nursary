@@ -22,6 +22,7 @@ export class AccountRegisterComponent implements OnInit {
   username: String;
   email: String;
   password: String;
+  teacherName:String;
 
   constructor(private validateService: ValidateService,
     private authService: AuthenticationService,
@@ -42,7 +43,8 @@ export class AccountRegisterComponent implements OnInit {
       email: this.email,
       mobileNo: this.mobileNo,
       username: this.username,
-      password: this.password
+      password: this.password,
+      teacherName:this.teacherName
     };
     console.log( 'Submit button pressed' );
     // validating

@@ -22,6 +22,20 @@ export class ParentServicesService {
     return this.http.get('http://localhost:4000/teachers/holidayDec', {headers: headers}) as Observable<any>;
   }
 
+  getUser(username):Observable<any>{
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+  
+    return this.http.post('http://localhost:4000/parent/getUsers',{'username':username},{headers:headers}) as Observable<any>;
+  }
+
+  viweTeacher(username){
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    
+    let resu = this.http.post('http://localhost:4000/parent/viweTeacher', {username : username , accountType : "Teacher"} ,{headers: headers}) as Observable<any>;
+    console.log(resu);
+    return resu;
+  }
+
 }
 
 

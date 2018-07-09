@@ -26,13 +26,14 @@ router.post('/transportReq',function(req,res,next){
     
 });
 
-router.post('/teacherDetail',function(req,res,next){
-    parentProfiles.getUserByUsername(req.body.username,'teacher',(err,teacher)=>{
+router.post('/viweTeacher',function(req,res,next){
+    console.log("viwe teacher");
+    parentProfiles.getUser(req.body.username,(err,teacher)=>{
         if(err){
             console.log("error getting teacher detail");
             res.json({success:false,msg:"error getting teacher details"});
         }else{
-            console.log("Success");
+            console.log("Success getting teacher");
             res.json(teacher)
         }
     });
@@ -58,8 +59,19 @@ router.post('/checkHomework',function(req,res,next){
             console.log("Homework success");
             res.json(homework);
         }
+    });
+});
+
+router.post('/getUsers',function(req,res,next){
+    console.log(req.body.username);
+    parentProfiles.getUsers(req.body.username,(err,user)=>{
+        if(err){
+            console.log("Error");
+        }else{
+            console.log(user[0]);
+            res.json(user[0]);
+        }
     })
 })
-
 
 module.exports=router;

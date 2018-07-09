@@ -51,7 +51,7 @@ export class AccountLoginComponent implements OnInit {
           this.router.navigate(['teachers']);
           return true;
         }
-        if (data.user.accountType === 'parent') {
+        if (data.user.accountType === 'Parent' || data.user.accountType === 'parent') {
           this.router.navigate(['parent']);
           return true;
         }
