@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+//first commit
 
 import { AppComponent } from './app.component';
 import { TeacherComponent } from './Teacher/teacher/teacher.component';
