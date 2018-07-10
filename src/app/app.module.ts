@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-//first commit
+// first commit
 
 import { AppComponent } from './app.component';
 import { TeacherComponent } from './Teacher/teacher/teacher.component';
@@ -46,8 +46,8 @@ import { ParentServicesService } from './services/parent-services.service';
 import { ParentSideBarComponent } from './Parent/parent-side-bar/parent-side-bar.component';
 import { ParentComponent } from './Parent/parent/parent.component';
 import { ApplyTransportComponent } from './Parent/apply-transport/apply-transport.component';
-import { ViweTeacherComponent } from './parent/viwe-teacher/viwe-teacher.component';
-import { CheckHomeworkComponent } from './parent/check-homework/check-homework.component';
+import { ViweTeacherComponent } from './Parent/viwe-teacher/viwe-teacher.component';
+import { CheckHomeworkComponent } from './Parent/check-homework/check-homework.component';
 import { AddHomeworkComponent } from './Teacher/add-homework/add-homework.component';
 import { TeacherServiceService } from './services/teacher-service.service';
 
@@ -71,13 +71,8 @@ import { TeacherServiceService } from './services/teacher-service.service';
     DeclareholidayComponent,
     ApproveLeaveApplicationComponent,
     DisplayStudentComponent,
-
-
-  
     SalarySheetComponent,
-
-   
-
+    // tslint:disable-next-line:max-line-length
     GetStudentComponent, ParentSideBarComponent, ParentComponent, ApplyTransportComponent, ViweTeacherComponent, CheckHomeworkComponent, AddHomeworkComponent],
 
 
@@ -90,6 +85,7 @@ import { TeacherServiceService } from './services/teacher-service.service';
   ],
 
   providers: [TeacherService, ValidateService, AuthenticationService, GuardService, LeaveAppServiceService, AdminLinkGuardService, TeacherLinkGuardService, StudentLinkGuardService, AdvPaymentFormService, StudentInfoService, TransferSalaryDetailsService, MaintenanceDetailService,DeclaareHolidayService, ParentServicesService,TeacherServiceService],
+
 
   bootstrap: [AppComponent]
 })

@@ -9,7 +9,8 @@ export class TransferSalaryDetailsService {
 
   getInfo(username): Observable<RegularResponse> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post('http://localhost:4000/users/salarySheet',{username}, {headers: headers}) as Observable<RegularResponse>;
+    // tslint:disable-next-line:max-line-length
+    return this.http.post('http://localhost:4000/users/salarySheet', {username: username}, {headers: headers}) as Observable<RegularResponse>;
   }
   submitMaintenanceApplication(form): Observable<RegularResponse> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');

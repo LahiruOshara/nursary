@@ -42,7 +42,7 @@ module.exports.recordApplication= function(application,callback){
 
 //getting salary sheets
 module.exports.getApplication=function(username,callback){
-    console.log(username)
-   salarySheet.findOne({username},callback);
+    // console.log(username)
+   salarySheet.findOne({username:username},callback);
     console.log("fine")
   }

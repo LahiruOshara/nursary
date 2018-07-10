@@ -19,6 +19,7 @@ export class ApproveLeaveApplicationComponent implements OnInit {
   ngOnInit() {
     this.getApplications();
   }
+
   // get leave application
   getApplications() {
     this.leaveAppService.getLeaveApplications().subscribe(data => {
@@ -34,11 +35,11 @@ export class ApproveLeaveApplicationComponent implements OnInit {
   approveleaveApplication(application: Application) {
 
     this.leaveAppService.returnedApprovedApplication(application).subscribe(data => {
-       // console.log('Trying to register');
+        console.log('Trying to register');
        if (data.success) {
         this.messages.show( 'Submited', {
           cssClass: 'alert-success',
-          timeOut: 300 });
+          timeOut: 30 });
           return true;
 
       } else {
@@ -49,9 +50,11 @@ export class ApproveLeaveApplicationComponent implements OnInit {
       }
     });
     this.selectedApplication = null;
+    this.sleep(600);
     this.router.navigate(['/admin']); // reload the page again
 
   }
+
 
 
   onSelect(application: Application): void {
@@ -60,10 +63,20 @@ export class ApproveLeaveApplicationComponent implements OnInit {
    // console.log(this.selectedApplication);
   }
 
-  onFormSubmit() {
+  onFormSubmit(selectedApplication) {
+    console.log('here');
+    this.approveleaveApplication(selectedApplication);
     return true;
   }
 
+  sleep(milliseconds) {
+    const start = new Date().getTime();
+    while (true) {
+      if ((new Date().getTime() - start) < milliseconds) {
+        break;
+      }
+    }
+  }
 }
 
 
