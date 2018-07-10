@@ -7,7 +7,7 @@ const maintenanceDetailsForm=require('../models/maintenanceDetails');
 const attendanceSheet=require('../models/Attendance');
 
 const holidayDec=require('../models/declareHoliday');
-
+const homework = require('../models/homeWork');
 // saving the leave applicationRegister
 router.post('/leaveApplication',(req,res)=>{
     let application=new leaveApplication({
@@ -127,6 +127,19 @@ router.get('/holidayDec',function(req,res){
     //res.json({applications:applications});
 });
 
+
+
+router.post('/addhomework',function(req,res){
+    let application = new homework({
+        teacherName : req.body.teacherName,
+        homework : req.body.homework,
+        dueDate : req.body.dueDate
+    })
+    homework.recordApplication(application,(error,applications)=>{
+        if(error) throw error;
+        res.json({success:true, msg : "Added homework"});
+    });
+})
 
 
 });

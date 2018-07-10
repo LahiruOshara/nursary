@@ -1,23 +1,27 @@
 const mongoose=require('mongoose');
 const config=require('../config/database')
 
-const attendanceSchema= mongoose.Schema({
+const attendanceSchema=mongoose.Schema({
     username:{
         type:String,
-        required:true
+        require:true
     },
     attendance:{
         type:Boolean,
-        required:true
-    },
-})
+        require:true
 
-const attendance=module.exports = mongoose.model('attendanceSchema',attendanceSchema);
+    }
+
+});
+const attendanceSheet= module.exports =mongoose.model("attendanceSheet",attendanceSchema);
 
 module.exports.recordApplication= function(application,callback){
+    //console.log("saving the application");
     application.save(callback);
+    console.log("saved the application");
 }
 
-module.exports.getAttendance=function(username,callback){
-    attendance.find({username:username},callback);
-  }
+module.exports.getApplication=function(callback){
+    attendanceSheet.find(callback);
+    console.log('get application');
+}
