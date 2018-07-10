@@ -43,6 +43,11 @@ export class ValidateService {
     }return true;
   }
 
+  validateAmount(amount){
+    const am=/^\d+(?:\.\d{0,2})$/;
+    return am.test(String(amount));
+  }
+  
   validateDates(date1, date2) {
     const temp1 = new Date(date1);
     const temp2 = new Date(date2);

@@ -10,7 +10,7 @@ input[type=text] {
 
 
 input[type=date]{
-  width: 13%; /* half width */
+  width: 17%; /* half width */
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
