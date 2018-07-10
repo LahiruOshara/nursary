@@ -21,6 +21,7 @@ import { DisplayStudentComponent} from '../../app/Teacher/display-student/displa
 import {SalarySheetComponent} from '../Teacher/salary-sheet/salary-sheet.component';
 
 import { GetStudentComponent} from '../../app/Admin/get-student/get-student.component';
+import { ParentLinkService } from '../../app/services/parent-link.service';
 
 import { ParentComponent } from '../../app/Parent/parent/parent.component';
 import { ApplyTransportComponent } from '../../app/Parent/apply-transport/apply-transport.component';

@@ -36,7 +36,7 @@ export class ApplyTransportComponent implements OnInit {
     console.log(res);*/
     if(!this.validate.validateTrasportRequest(temp)){
       this.messages.show("Enter a address to request transport!",{
-        cssClass : 'alert-success',
+        cssClass : 'alert-danger',
         timeOut:5000
       });
     }else{
