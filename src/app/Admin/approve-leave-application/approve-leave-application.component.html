@@ -1,13 +1,8 @@
 <app-nav-bar></app-nav-bar>
 <app-admin-side-bar></app-admin-side-bar>
-
+<h1 style="margin-left: 500px; margin-top: 75px">Leave Applications</h1>
 <div class="center">
 <ul class="list">
-
-
-    <li *ngFor="let application of applications" [class.selected]="application === selectedApplication" (click)="onSelect(application)">
-  <!-- show the list with accept is false -->
-
   <li *ngFor="let application of applications"
   [class.selected]="application === selectedApplication"
   (click)="onSelect(application)"
@@ -18,41 +13,17 @@
   <div *ngIf="selectedApplication" >
      
       <form class="container" >
-        <label for="sdate" style="color: #4c5552">starting date &#8658;</label> {{selectedApplication.sdate}} <br>
-        <label for="edate"  style="color: #4c5552">end date &#8658;</label>{{selectedApplication.edate}} <br>
-        <label for="reason"  style="color: #4c5552">reason &#8658;</label>{{selectedApplication.reason}} <br>
-        <label for="comment"  style="color: #4c5552">comment</label>
+        <label for="sdate" style="color: #4c5552;font-family:Cambria;font-size: 20px">Starting date &#8658;</label> {{selectedApplication.sdate}} <br>
+        <label for="edate" style="color: #4c5552;font-family: Cambria;font-size: 20px">End date &#8658;</label>{{selectedApplication.edate}} <br>
+        <label for="reason"style="color: #4c5552; font-family: Cambria;font-size: 20px">Reason &#8658;</label>{{selectedApplication.reason}} <br>
+        <!--<label for="comment"  style="color: #4c5552;font-family: Cambria;font-size: 20px">Comment</label>
         <textarea name="comment" id="" cols="30" rows="10"></textarea>
         <ul class="middleList">
             <input type="radio" value="Accept" name="gender"  checked>Accept  <input type="radio" value="Decline" name="gender"  >Decline 
-        </ul><br>
-        <button type="submit" class="btn btn-success">submit</button>
+        </ul><br>-->
+        <button type="submit" class="btn btn-success">Submit</button>
       </form><br>
     </div>
 </ul>
 </div>
 
-
-      <span class="badge">$</span>{{application.username}}
-
-
-
-  
-    </li>
-
-  <div *ngIf="selectedApplication ">
-   
-    <form class="container">
-      <label for="sdate" style="color: #4c5552">starting date &#8658;</label> {{selectedApplication.sdate}}
-      <br>
-      <label for="edate" style="color: #4c5552">end date &#8658;</label>{{selectedApplication.edate}}
-      <br>
-      <label for="reason" style="color: #4c5552">reason &#8658;</label>{{selectedApplication.reason}}
-      <br>
-
-   <!-- we use router link to reload the page -->
-      <button type="submit" class="btn btn-success" (click)=" approveleaveApplication(selectedApplication)" routerLink='/approveLeave'>Accept</button>
-    </form>
-    <br>
-  </div>
-</ul>

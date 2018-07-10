@@ -9,39 +9,31 @@ import { Router } from '@angular/router';
   styleUrls: ['./approve-leave-application.component.css']
 })
 export class ApproveLeaveApplicationComponent implements OnInit {
-  applications: Application[]
- selectedApplication: Application
-  approvedApplication:Application
+  applications: Application [];
+  selectedApplication: Application;
+  approvedApplication: Application;
   constructor(private leaveAppService: LeaveAppServiceService,
-  private messages:FlashMessagesService,
-private router:Router) { }
+  private messages: FlashMessagesService,
+  private router: Router) { }
 
   ngOnInit() {
- 
     this.getApplications();
-   
-
   }
-  //get leave application
-  getApplications(){
-    
+  // get leave application
+  getApplications() {
     this.leaveAppService.getLeaveApplications().subscribe(data => {
       this.applications = data;
-      console.log(data)
+      console.log(data);
     }, error => {
         console.log(error);
         return false;
     });
-
     console.log(this.applications);
-    
   }
+  // approve leave application
+  approveleaveApplication(application: Application) {
 
-  //approve leave application
-  approveleaveApplication(application:Application){
-  
-
-    this.leaveAppService.returnedApprovedApplication(application).subscribe(data=>{
+    this.leaveAppService.returnedApprovedApplication(application).subscribe(data => {
        // console.log('Trying to register');
        if (data.success) {
         this.messages.show( 'Submited', {
@@ -55,12 +47,9 @@ private router:Router) { }
         timeOut: 5000 });
         return false;
       }
-
-  
     });
-   
-    this.selectedApplication=null
-    this.router.navigate(['admin']);//reload the page again
+    this.selectedApplication = null;
+    this.router.navigate(['/admin']); // reload the page again
 
   }
 
@@ -69,7 +58,6 @@ private router:Router) { }
     console.log(application);
     this.selectedApplication = application;
    // console.log(this.selectedApplication);
-   
   }
 
   onFormSubmit() {
@@ -84,5 +72,5 @@ interface Application {
   edate: string;
   sdate: string;
   reason: string;
-  accept:Boolean
+  accept: Boolean;
 }

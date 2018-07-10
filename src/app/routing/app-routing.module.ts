@@ -30,8 +30,8 @@ import { CheckHomeworkComponent } from '../../app/parent/check-homework/check-ho
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'declareholiday', component: DeclareholidayComponent,canActivate: [GuardService]},
-  {path: 'teachers', component: TeacherComponent,canActivate: [GuardService]},
+  {path: 'declareholiday', component: DeclareholidayComponent, canActivate: [GuardService]},
+  {path: 'teachers', component: TeacherComponent, canActivate: [GuardService]},
   {path: 'admin', component: AdminComponent, canActivate: [GuardService]},
   {path: 'accountLogIn', component: AccountLoginComponent  },
   {path: 'accountRegister', component: AccountRegisterComponent, canActivate: [AdminLinkGuardService]},
@@ -40,9 +40,7 @@ const routes: Routes = [
   {path: 'reqMantenance', component: RequestForMaintenanceComponent, },
   {path: 'advPayment', component: AskForAdvancePaymentComponent, canActivate: [GuardService]},
 
-  {path:'salarySheet',component:SalarySheetComponent,canActivate: [GuardService]}
- 
-  
+  {path: 'salarySheet', component: SalarySheetComponent, canActivate: [GuardService]},
 
   {path: 'approveLeave', component: ApproveLeaveApplicationComponent, canActivate: [AdminLinkGuardService]},
   {path: 'studentDetails', component: DisplayStudentComponent, canActivate: [TeacherLinkGuardService]},
