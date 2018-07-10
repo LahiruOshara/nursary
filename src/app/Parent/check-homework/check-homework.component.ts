@@ -8,7 +8,8 @@ import { ParentServicesService } from '../../services/parent-services.service';
 })
 export class CheckHomeworkComponent implements OnInit {
   username : String;
-
+  user:any;
+  hwList:any;
   constructor(private parentService: ParentServicesService) { }
 
   ngOnInit() {
@@ -16,8 +17,12 @@ export class CheckHomeworkComponent implements OnInit {
       console.log(this.username);
 
       this.parentService.getUser(this.username).subscribe(data => {
-      
-        
+      console.log('Trying to get user');
+      this.user=data;
+        console.log('success');
+        this.parentService.getHW(this.user.teacherName).subscribe(home=>{
+          this.hwList = home;
+        });
 
     });
   }

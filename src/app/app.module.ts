@@ -49,7 +49,7 @@ import { ApplyTransportComponent } from './Parent/apply-transport/apply-transpor
 import { ViweTeacherComponent } from './Parent/viwe-teacher/viwe-teacher.component';
 import { CheckHomeworkComponent } from './Parent/check-homework/check-homework.component';
 import { AddHomeworkComponent } from './Teacher/add-homework/add-homework.component';
-
+import { TeacherServiceService } from './services/teacher-service.service';
 
 
 @NgModule({
@@ -84,8 +84,8 @@ import { AddHomeworkComponent } from './Teacher/add-homework/add-homework.compon
     FlashMessagesModule.forRoot(),
   ],
 
-  // tslint:disable-next-line:max-line-length
-  providers: [TeacherService, ValidateService, AuthenticationService, GuardService, LeaveAppServiceService, AdminLinkGuardService, TeacherLinkGuardService, StudentLinkGuardService, AdvPaymentFormService, StudentInfoService, TransferSalaryDetailsService, MaintenanceDetailService, DeclaareHolidayService, ParentServicesService],
+  providers: [TeacherService, ValidateService, AuthenticationService, GuardService, LeaveAppServiceService, AdminLinkGuardService, TeacherLinkGuardService, StudentLinkGuardService, AdvPaymentFormService, StudentInfoService, TransferSalaryDetailsService, MaintenanceDetailService,DeclaareHolidayService, ParentServicesService,TeacherServiceService],
+
 
   bootstrap: [AppComponent]
 })

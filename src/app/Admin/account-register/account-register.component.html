@@ -58,9 +58,10 @@
 
 
   <!--  <input [(ngModel)]="accountType" name='accountType' type="text" placeholder="Type" required> -->
+  <div ng-if="accountType === 'Parent'">
   <label><b>Teacher Username</b></label>
   <input [(ngModel)]="teacherName" name='address' type="text" placeholder="address" >
-
+</div>
     <label><b>Address</b></label>
     <input [(ngModel)]="address" name='address' type="text" placeholder="address" required>
 

@@ -39,7 +39,7 @@ export class ParentServicesService {
   getHW(teacherName){
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     
-    let resu = this.http.post('http://localhost:4000/parent/viweTeacher', {teacherName : teacherName} ,{headers: headers}) as Observable<any>;
+    let resu = this.http.post('http://localhost:4000/parent/checkHomework', {teacherName : teacherName} ,{headers: headers}) as Observable<any>;
     console.log(resu);
     return resu;
   }

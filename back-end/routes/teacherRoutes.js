@@ -178,5 +178,18 @@ router.get('/markAttendance',(req,res,next)=>{
     });
 });
 
-module.exports=router;
+router.post('/addhomework',function(req,res,next){
+    console.log(req.body);
+    let application =new homework({
+        teacher : req.body.teacherName,
+        work : req.body.homeWork,
+        dueDate : req.body.dueDate
+    });
+    console.log('sdfdfsdfsdfs=>',application);
+    homework.recordApplication(application,(error,applications)=>{
+        if(error) throw error;
+        res.json({success:true, msg : "Added homework"});
+    });
+});
 
+module.exports=router;

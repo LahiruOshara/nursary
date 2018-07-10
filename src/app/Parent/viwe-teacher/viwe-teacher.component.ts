@@ -22,7 +22,7 @@ export class ViweTeacherComponent implements OnInit {
       console.log('Trying to get user');
       this.user=data;
         console.log('success');
-        console.log(this.user.teacherName,"================");
+        console.log(this.user,"================");
 
         this.parentService.viweTeacher(this.user.teacherName.toString()).subscribe(data=>{
           this.teacher = data[0];
