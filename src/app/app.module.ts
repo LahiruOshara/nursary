@@ -46,6 +46,9 @@ import { ParentServicesService } from './services/parent-services.service';
 import { ParentSideBarComponent } from './Parent/parent-side-bar/parent-side-bar.component';
 import { ParentComponent } from './Parent/parent/parent.component';
 import { ApplyTransportComponent } from './Parent/apply-transport/apply-transport.component';
+import { ViweTeacherComponent } from './parent/viwe-teacher/viwe-teacher.component';
+import { CheckHomeworkComponent } from './parent/check-homework/check-homework.component';
+import { AddHomeworkComponent } from './Teacher/add-homework/add-homework.component';
 
 
 
@@ -69,12 +72,14 @@ import { ApplyTransportComponent } from './Parent/apply-transport/apply-transpor
     ApproveLeaveApplicationComponent,
     DisplayStudentComponent,
 
+
   
     SalarySheetComponent,
 
    
 
-    GetStudentComponent, ParentSideBarComponent, ParentComponent, ApplyTransportComponent],
+    GetStudentComponent, ParentSideBarComponent, ParentComponent, ApplyTransportComponent, ViweTeacherComponent, CheckHomeworkComponent, AddHomeworkComponent],
+
 
   imports: [
     BrowserModule,
