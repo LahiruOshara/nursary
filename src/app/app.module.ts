@@ -46,8 +46,8 @@ import { ParentServicesService } from './services/parent-services.service';
 import { ParentSideBarComponent } from './Parent/parent-side-bar/parent-side-bar.component';
 import { ParentComponent } from './Parent/parent/parent.component';
 import { ApplyTransportComponent } from './Parent/apply-transport/apply-transport.component';
-import { ViweTeacherComponent } from './parent/viwe-teacher/viwe-teacher.component';
-import { CheckHomeworkComponent } from './parent/check-homework/check-homework.component';
+import { ViweTeacherComponent } from './Parent/viwe-teacher/viwe-teacher.component';
+import { CheckHomeworkComponent } from './Parent/check-homework/check-homework.component';
 import { AddHomeworkComponent } from './Teacher/add-homework/add-homework.component';
 
 
