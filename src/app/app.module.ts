@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-//first commit
+// first commit
 
 import { AppComponent } from './app.component';
 import { TeacherComponent } from './Teacher/teacher/teacher.component';
@@ -71,13 +71,8 @@ import { AddHomeworkComponent } from './Teacher/add-homework/add-homework.compon
     DeclareholidayComponent,
     ApproveLeaveApplicationComponent,
     DisplayStudentComponent,
-
-
-  
     SalarySheetComponent,
-
-   
-
+    // tslint:disable-next-line:max-line-length
     GetStudentComponent, ParentSideBarComponent, ParentComponent, ApplyTransportComponent, ViweTeacherComponent, CheckHomeworkComponent, AddHomeworkComponent],
 
 
@@ -89,7 +84,8 @@ import { AddHomeworkComponent } from './Teacher/add-homework/add-homework.compon
     FlashMessagesModule.forRoot(),
   ],
 
-  providers: [TeacherService, ValidateService, AuthenticationService, GuardService, LeaveAppServiceService, AdminLinkGuardService, TeacherLinkGuardService, StudentLinkGuardService, AdvPaymentFormService, StudentInfoService, TransferSalaryDetailsService, MaintenanceDetailService,DeclaareHolidayService, ParentServicesService],
+  // tslint:disable-next-line:max-line-length
+  providers: [TeacherService, ValidateService, AuthenticationService, GuardService, LeaveAppServiceService, AdminLinkGuardService, TeacherLinkGuardService, StudentLinkGuardService, AdvPaymentFormService, StudentInfoService, TransferSalaryDetailsService, MaintenanceDetailService, DeclaareHolidayService, ParentServicesService],
 
   bootstrap: [AppComponent]
 })

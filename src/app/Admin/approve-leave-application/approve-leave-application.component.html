@@ -12,7 +12,7 @@
 
   <div *ngIf="selectedApplication" >
      
-      <form class="container" >
+      <form (submit)="onFormSubmit(selectedApplication)" class="container" >
         <label for="sdate" style="color: #4c5552;font-family:Cambria;font-size: 20px">Starting date &#8658;</label> {{selectedApplication.sdate}} <br>
         <label for="edate" style="color: #4c5552;font-family: Cambria;font-size: 20px">End date &#8658;</label>{{selectedApplication.edate}} <br>
         <label for="reason"style="color: #4c5552; font-family: Cambria;font-size: 20px">Reason &#8658;</label>{{selectedApplication.reason}} <br>
@@ -27,3 +27,4 @@
 </ul>
 </div>
 
+<flash-messages></flash-messages>
