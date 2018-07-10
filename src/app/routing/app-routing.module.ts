@@ -17,7 +17,14 @@ import { ApproveLeaveApplicationComponent } from '../Admin/approve-leave-applica
 import { AdminLinkGuardService} from '../../app/services/admin-link-guard.service';
 import { TeacherLinkGuardService} from '../../app/services/teacher-link-guard.service';
 import { DisplayStudentComponent} from '../../app/Teacher/display-student/display-student.component';
+
 import {SalarySheetComponent} from '../Teacher/salary-sheet/salary-sheet.component';
+
+import { GetStudentComponent} from '../../app/Admin/get-student/get-student.component';
+
+import { ParentComponent } from '../../app/Parent/parent/parent.component';
+import { ApplyTransportComponent } from '../../app/Parent/apply-transport/apply-transport.component';
+
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -31,11 +38,19 @@ const routes: Routes = [
   {path: 'leaveApplication', component: LeaveApplicationComponent, canActivate: [TeacherLinkGuardService]},
   {path: 'reqMantenance', component: RequestForMaintenanceComponent, },
   {path: 'advPayment', component: AskForAdvancePaymentComponent, canActivate: [GuardService]},
-  {path: 'approveLeave', component: ApproveLeaveApplicationComponent},
-  {path: 'studentDetails', component: DisplayStudentComponent,canActivate: [GuardService] },
+
   {path:'salarySheet',component:SalarySheetComponent,canActivate: [GuardService]}
  
   
+
+  {path: 'approveLeave', component: ApproveLeaveApplicationComponent, canActivate: [AdminLinkGuardService]},
+  {path: 'studentDetails', component: DisplayStudentComponent, canActivate: [TeacherLinkGuardService]},
+  {path: 'studentDetailsA', component: GetStudentComponent, canActivate: [AdminLinkGuardService]},
+
+
+  {path: 'parent', component: ParentComponent},
+  {path: 'applyTransport', component: ApplyTransportComponent},
+
 ];
 
 @NgModule({

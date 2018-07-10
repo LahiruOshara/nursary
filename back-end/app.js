@@ -53,6 +53,10 @@ app.use('/teachers',teachers);
 //student routes
 const students=require('./routes/studentRoutes');
 app.use('/student',students)
+const parent=require('./routes/parentRoutes');
+app.use('/parent',parent)
+
+
 
 //start server
  app.listen(port,()=>{

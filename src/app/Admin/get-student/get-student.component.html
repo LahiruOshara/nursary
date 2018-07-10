@@ -1,0 +1,17 @@
+<app-admin-side-bar></app-admin-side-bar>
+<br><br><br><br>
+<table id="customers">
+  <tr>
+    <th>Name</th> 
+    <th>Username</th>
+    <th>Address</th>
+    <th>Phone Number</th>
+  </tr>
+  <tr *ngFor="let student of studentList">
+      <td>{{student.firstName}} {{student.middleName}} {{student.lastName}}</td>
+    <td>{{student.username}}</td>
+    <td>{{student.address}}</td>
+    <td>{{student.mobileNo}}</td>
+  </tr>
+  
+</table>
