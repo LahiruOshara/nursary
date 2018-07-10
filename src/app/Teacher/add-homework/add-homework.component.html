@@ -1,3 +1,19 @@
-<p>
-  add-homework works!
-</p>
+<app-parent-side-bar></app-parent-side-bar>
+
+<form (submit)="onFormSubmit()">
+
+  <div class="container"> 
+    <label><b>Username : </b></label>{{username}}
+
+    <br><br>
+    <label><b>Home Work :</b></label>
+    <input [(ngModel)]="homework" name='from' #name1="ngModel" width="10%" type="text" required >
+    <br>
+
+    <label><b>Due Date :</b></label>
+    <input [(ngModel)]="homework" name='from' #name1="ngModel" width="10%" type="date" required >
+    <br>
+    <button type="submit">submit</button>
+  </div>
+</form>
+<flash-messages></flash-messages>

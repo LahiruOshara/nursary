@@ -4,7 +4,7 @@ const salarySheet=require('../models/salarysheet');
 const leaveApplication=require('../models/leaveApplication');
 const advPaymentForm=require('../models/advancedPaymentForm');
 const maintenanceDetailsForm=require('../models/maintenanceDetails');
-const attendanceSheet=require('../models/Attendance');
+
 
 const holidayDec=require('../models/declareHoliday');
 const homework = require('../models/homeWork');
@@ -173,13 +173,7 @@ router.post('/requestMaintenance',(req,res,next)=>{
 });
 //get attendance details
 
-router.get('/markAttendance',(req,res,next)=>{
-    attendanceSheet.getApplication((error,application)=>{
-        if(error){throw error}
-        res.json(application);
-    });
-});
-//saving attendance details
+
 router.post('/markAttendance',(req,res,next)=>{
     let application=new attendanceSheet({
         username:req.body.username,

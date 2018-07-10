@@ -3,7 +3,7 @@ const router= express.Router();
 const config=require('../config/database');
 const transportRequest = require('../models/transportReq')
 const parentProfiles=require('../models/user');
-const attendance =require('../models/attendance');
+
 const Homework =require('../models/homeWork');
 
 router.post('/transportReq',function(req,res,next){  
@@ -39,17 +39,7 @@ router.post('/viweTeacher',function(req,res,next){
     });
 });
 
-router.post('/checkAttendance',function(req,res,next){
-    attendance.getAttendance(req.body.username,(err,atten)=>{
-        if(err){
-            console.log("error getting attendance");
-            res.json({success:false,msg:"Error getting attendance"});
-        }else{
-            console.log(atten[0]);
-            res.json({'attendance':atten[0].attendance});
-        }
-    });
-});
+
 router.post('/checkHomework',function(req,res,next){
     Homework.checkHomework(req.body.teachername,(err,homework)=>{
         if(err){
