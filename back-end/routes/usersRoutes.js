@@ -99,8 +99,11 @@ router.post('/relevantUsers',(req,res,next)=>{
 });
   //tale relevanrt salary sheet
   router.post('/salarySheet',(req,res,next)=>{
-   let username={username:req.body.username}
+    console.log("back-end");
+    console.log(req.body);
+   const username=req.body.username;
    console.log(username)
+   console.log("here");
    salarySheet.getApplication(username,(error,application)=>{
       if(error) throw error
       res.json(application)
