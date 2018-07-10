@@ -8,6 +8,7 @@
   top:48px;
   background-color: black; /* Black */
   overflow-x: hidden; /* Disable horizontal scroll */
+
 }
 
 /* The navigation menu links */
@@ -16,14 +17,14 @@
   text-decoration: none;
   font-size: 17px;
   color: white;
-
 }
 
 
 
 /* When you mouse over the navigation links, change their color */
 .teacher-side-bar li:hover {
-  color: blue;
+  color: white;
+  background-color:  rgb(175, 113, 233);
 }
 
 /* Style page content */

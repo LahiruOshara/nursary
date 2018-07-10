@@ -1,39 +1,39 @@
 
 /* The sidebar menu */
 .admin-side-bar {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 15%; /* Set the width of the sidebar */
-    position : fixed; /* Fixed Sidebar (stay in place on scroll) */
-    left: 40px;
-    top:48px;
-    background-color: black; /* Black */
-    overflow-x: hidden; /* Disable horizontal scroll */
-  }
-  
-  /* The navigation menu links */
-  .admin-side-bar li {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    color: white;  
-  }
-  
-  
-  
-  /* When you mouse over the navigation links, change their color */
-  .admin-side-bar li:hover {
-    color: blue;
-  }
-  
-  /* Style page content */
-  .main {
-    margin-left: 160px; /* Same as the width of the sidebar */
-    padding: 0px 10px;
-  }
-  
-  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
-    .admin-side-bar {padding-top: 15px;}
-    .admin-side-bar a {font-size: 18px;}
-  }
-  
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 15%; /* Set the width of the sidebar */
+  position : fixed; /* Fixed Sidebar (stay in place on scroll) */
+  left: 40px;
+  top:48px;
+  background-color: black; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+}
+
+/* The navigation menu links */
+.admin-side-bar li {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  color: white;  
+}
+
+
+
+/* When you mouse over the navigation links, change their color */
+.admin-side-bar li:hover {
+  color: white;
+  background-color:  rgb(175, 113, 233);
+}
+
+/* Style page content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .admin-side-bar {padding-top: 15px;}
+  .admin-side-bar a {font-size: 18px;}
+}

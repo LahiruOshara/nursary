@@ -73,13 +73,14 @@ export class AccountRegisterComponent implements OnInit {
     this.authService.registerUser(user).subscribe(data => {
       console.log('Trying to register');
       if (data.success) {
-        this.messages.show( 'Successfully Registerd', {
+        this.messages.show(data.msg, {
           cssClass: 'alert-success',
           timeOut: 5000 });
         // this.router.navigate(['teachers']);
       } else {
-        console.log(data);
-        console.log('Something went wrong');
+        this.messages.show(data.msg, {
+          cssClass: 'alert-danger',
+          timeOut: 5000 });
       }
     });
   }

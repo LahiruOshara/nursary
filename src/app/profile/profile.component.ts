@@ -22,7 +22,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.authenticationService.getProfile().subscribe(profile => {
-      // console.log(profile.user);
+      console.log(profile.user);
       this.user = profile.user;
     }, error => {
         console.log(error);

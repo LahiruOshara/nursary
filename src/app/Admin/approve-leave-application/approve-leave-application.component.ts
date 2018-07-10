@@ -14,6 +14,7 @@ export class ApproveLeaveApplicationComponent implements OnInit {
   ngOnInit() {
     this.leaveAppService.getLeaveApplications().subscribe(data => {
       this.applications = data.applications;
+      console.log(this.applications);
     }, error => {
         console.log(error);
         return false;

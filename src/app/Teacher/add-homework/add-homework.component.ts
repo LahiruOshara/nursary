@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { FlashMessagesService} from 'angular2-flash-messages';
 import { ValidateService } from '../../services/validate.service';
+import{ TeacherServiceService } from '../../services/teacher-service.service';
 @Component({
   selector: 'app-add-homework',
   templateUrl: './add-homework.component.html',
@@ -13,37 +14,34 @@ export class AddHomeworkComponent implements OnInit {
     private validate : ValidateService,
     private router : Router,
     private messages: FlashMessagesService,
-    private parentService: ParentServicesService
+    private teacherService : TeacherServiceService
   ) { }
 
   ngOnInit() {
     this.username = localStorage.getItem('username');
   }
 
-  onFormSubmit(from) {
+  onFormSubmit(data) {
     const temp = {
-      'username' : this.username,
-      'from' : this.from
+      'teacherName' : data.username,
+      'homeWork' : data.from,
+      'dueDate' : data.dueDate
     };
-    /*console.log(temp);
-    const res = this.parentService.submitTr(temp);
-    console.log('here');
-    console.log(res);*/
-    if(!this.validate.validateTrasportRequest(temp)){
+    if(!this.validate.validatehomework(temp)){
       this.messages.show("Enter a address to request transport!",{
         cssClass : 'alert-success',
         timeOut:5000
       });
     }else{
-    this.parentService.submitTr(temp).subscribe(data => {
-      console.log('Trying to register');
+    this.teacherService.addHW(temp).subscribe(data => {
+      console.log('Trying to add homework');
       if (data.success) {
         console.log('success');
-        this.messages.show("Transport request sent!",{
+        this.messages.show("Home work added",{
           cssClass : 'alert-success',
           timeOut:5000
         });
-        this.router.navigate(['applyTransport']);
+        
         /*this.messages.show( 'Successfully Declared', {
           cssClass: 'alert-success',
           timeOut: 5000 });

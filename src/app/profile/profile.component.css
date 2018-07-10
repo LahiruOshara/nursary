@@ -1,16 +1,19 @@
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: auto;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-left: 480px;
   text-align: center;
   font-family: arial;
   border: 2px solid rgb(2, 14, 116); /* Green */
   height: 60%;
   width: 40%;
+  
+
 }
 
 .title {
   color: grey;
   font-size: 18px;
+
 }
 
 button {

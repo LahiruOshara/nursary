@@ -4,7 +4,7 @@ const router= express.Router();
 const leaveApplication=require('../models/leaveApplication');
 const advPaymentForm=require('../models/advancedPaymentForm');
 const holidayDec=require('../models/declareHoliday');
-
+const homework = require('../models/homeWork');
 // saving the leave applicationRegister
 router.post('/leaveApplication',(req,res)=>{
     let application=new leaveApplication({
@@ -80,6 +80,16 @@ router.get('/holidayDec',function(req,res){
 });
 
 
-
+router.post('/addhomework',function(req,res){
+    let application = new homework({
+        teacherName : req.body.teacherName,
+        homework : req.body.homework,
+        dueDate : req.body.dueDate
+    })
+    homework.recordApplication(application,(error,applications)=>{
+        if(error) throw error;
+        res.json({success:true, msg : "Added homework"});
+    });
+})
 
 module.exports=router;
