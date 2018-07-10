@@ -22,11 +22,19 @@ export class AskForAdvancePaymentComponent implements OnInit {
   }
 
   onFormSubmit() {
-    const advPaymentForm = {
+    const advPaymentForm = {//json object
       username: this.username,
       amount: this.amount,
       reason: this.reason
     };
+
+    //validating rupees
+    if (!this.validateService.validateAmount(this.amount)) {
+      this.messages.show( 'Enter valid amount', {
+        cssClass: 'alert-danger',
+        timeOut: 5000 });
+      return false;
+    }
 
     // validating
     if (!this.validateService.validateAdvForm(advPaymentForm)) {
@@ -55,3 +63,4 @@ export class AskForAdvancePaymentComponent implements OnInit {
    }
 
 }
+

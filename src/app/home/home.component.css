@@ -7,17 +7,18 @@
 .center {
     margin: auto;
     width: 15%;
+    color: black;
 }
 
 .button {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background-color: #0d79df;
     color: rgb(250, 249, 249);
-    font-size: 16px;
+    font-size: 18px;
     padding: 16px 30px;
     border: none;
     cursor: pointer;

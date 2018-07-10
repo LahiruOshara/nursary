@@ -3,6 +3,11 @@
 
 <div class="center">
 <ul class="list">
+
+
+    <li *ngFor="let application of applications" [class.selected]="application === selectedApplication" (click)="onSelect(application)">
+  <!-- show the list with accept is false -->
+
   <li *ngFor="let application of applications"
   [class.selected]="application === selectedApplication"
   (click)="onSelect(application)"
@@ -28,3 +33,26 @@
 </div>
 
 
+      <span class="badge">$</span>{{application.username}}
+
+
+
+  
+    </li>
+
+  <div *ngIf="selectedApplication ">
+   
+    <form class="container">
+      <label for="sdate" style="color: #4c5552">starting date &#8658;</label> {{selectedApplication.sdate}}
+      <br>
+      <label for="edate" style="color: #4c5552">end date &#8658;</label>{{selectedApplication.edate}}
+      <br>
+      <label for="reason" style="color: #4c5552">reason &#8658;</label>{{selectedApplication.reason}}
+      <br>
+
+   <!-- we use router link to reload the page -->
+      <button type="submit" class="btn btn-success" (click)=" approveleaveApplication(selectedApplication)" routerLink='/approveLeave'>Accept</button>
+    </form>
+    <br>
+  </div>
+</ul>
