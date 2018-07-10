@@ -28,7 +28,6 @@ private router:Router) { }
     this.leaveAppService.getLeaveApplications().subscribe(data => {
       this.applications = data;
       console.log(data)
-     
     }, error => {
         console.log(error);
         return false;

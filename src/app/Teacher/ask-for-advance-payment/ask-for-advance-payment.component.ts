@@ -28,6 +28,14 @@ export class AskForAdvancePaymentComponent implements OnInit {
       reason: this.reason
     };
 
+    //validating rupees
+    if (!this.validateService.validateAmount(this.amount)) {
+      this.messages.show( 'Enter valid amount', {
+        cssClass: 'alert-danger',
+        timeOut: 5000 });
+      return false;
+    }
+
     // validating
     if (!this.validateService.validateAdvForm(advPaymentForm)) {
       this.messages.show( 'Enter Details', {
@@ -55,3 +63,4 @@ export class AskForAdvancePaymentComponent implements OnInit {
    }
 
 }
+

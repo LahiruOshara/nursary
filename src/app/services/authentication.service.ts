@@ -35,8 +35,9 @@ export class AuthenticationService {
   }
 
   storeUserdata(token, user) {
-    localStorage.setItem('id_token', token);
+    // localStorage.setItem('id_token', token);
     // console.log(token);
+    sessionStorage.setItem('id_token', token);
     localStorage.setItem('user', JSON.stringify(user));
     localStorage.setItem('type', user.accountType);
     localStorage.setItem('username', user.username);
@@ -45,7 +46,7 @@ export class AuthenticationService {
   }
 
   loadToken() {
-    const token = localStorage.getItem('id_token');
+    const token = sessionStorage.getItem('id_token');
     this.token = token;
     // console.log(token);
     return token;
@@ -55,10 +56,12 @@ export class AuthenticationService {
     this.token = null;
     this.user = null;
     localStorage.clear();
+    sessionStorage.clear();
   }
 
   loggedIn() {
-    return !(localStorage.getItem('id_token') === null);
+    return !(sessionStorage.getItem('id_token') === null);
+    // tokenNotExpired();
   }
 
   returnType() {

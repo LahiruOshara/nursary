@@ -10,31 +10,34 @@ const User=require('../models/user');
 
 //Register
 router.post('/register',(req,res,next)=>{
-  let newUser= new User({
-    firstName:req.body.firstName,
-    middleName:req.body.middleName,
-    lastName:req.body.lastName,
-    accountType:req.body.accountType,
-    address:req.body.address,
-    mobileNo:req.body.mobileNo,
-    email:req.body.email,
-    username:req.body.username,
-    password:req.body.password,
-    studentName:req.body.studentName,
-    teacherName:req.body.teacherName,
-    
-  }); 
-
-  console.log(newUser);
-  User.addUser(newUser,function(error,user){
-    if(error){
-      res.json({success:false,msg:'Failed to register user'});
-    }
-    else{        
-      res.json({success:true,msg:'User registered'});
-    }
-  })
-});
+  const username=req.body.username;
+  User.getUserByUsername(username,(error,newUser)=>{
+    if(error) throw error;
+    if(newUser){
+      return res.json({success:false,msg:'username already exits'});
+    }else{
+      let newUser= new User({
+        firstName:req.body.firstName,
+        middleName:req.body.middleName,
+        lastName:req.body.lastName,
+        accountType:req.body.accountType,
+        address:req.body.address,
+        mobileNo:req.body.mobileNo,
+        email:req.body.email,
+        username:req.body.username,
+        password:req.body.password,
+      }); 
+      User.addUser(newUser,function(error){
+        if(error){
+          res.json({success:false,msg:'Failed to register user'});
+        }
+        else{        
+          res.json({success:true,msg:'User registered'});
+          }
+        })
+      }
+    })
+  });
 
 //Authenticate
 router.post('/authenticate',(req,res,next)=>{
