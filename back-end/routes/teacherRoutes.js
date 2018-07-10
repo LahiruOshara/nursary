@@ -4,8 +4,6 @@ const salarySheet=require('../models/salarysheet');
 const leaveApplication=require('../models/leaveApplication');
 const advPaymentForm=require('../models/advancedPaymentForm');
 const maintenanceDetailsForm=require('../models/maintenanceDetails');
-
-
 const holidayDec=require('../models/declareHoliday');
 const homework = require('../models/homeWork');
 // saving the leave applicationRegister
@@ -173,23 +171,24 @@ router.post('/requestMaintenance',(req,res,next)=>{
 });
 //get attendance details
 
-
-router.post('/markAttendance',(req,res,next)=>{
-    let application=new attendanceSheet({
-        username:req.body.username,
-        attendance:req.body.attendance
-
-    });
-    attendanceSheet.recordApplication(application,(error,application)=>{
-        if(error){
-            console.log('Error'+error)
-            res.json({success:false,msg:"Faild to process the request"});
-        }else{
-            console.log('success');
-            res.json({success:true,msg:"reqest sent"});
-        }
+router.get('/markAttendance',(req,res,next)=>{
+    attendanceSheet.getApplication((error,application)=>{
+        if(error){throw error}
+        res.json(application);
     });
 });
 
+router.post('/addhomework',function(req,res,next){
+    console.log(req.body);
+    let application =new homework({
+        teacher : req.body.teacherName,
+        work : req.body.homeWork,
+        dueDate : req.body.dueDate
+    });
+    console.log('sdfdfsdfsdfs=>',application);
+    homework.recordApplication(application,(error,applications)=>{
+        if(error) throw error;
+        res.json({success:true, msg : "Added homework"});
+    });
+});
 module.exports=router;
-

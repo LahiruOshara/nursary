@@ -26,6 +26,7 @@ router.post('/register',(req,res,next)=>{
         email:req.body.email,
         username:req.body.username,
         password:req.body.password,
+        teacherName:req.body.teacherName
       }); 
       User.addUser(newUser,function(error){
         if(error){

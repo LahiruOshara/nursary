@@ -25,7 +25,7 @@ export class ApplyTransportComponent implements OnInit {
     this.username = localStorage.getItem('username');
   }
 
-  onFormSubmit(from) {
+  onFormSubmit() {
     const temp = {
       'username' : this.username,
       'from' : this.from

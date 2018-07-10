@@ -49,7 +49,7 @@ import { ApplyTransportComponent } from './Parent/apply-transport/apply-transpor
 import { ViweTeacherComponent } from './parent/viwe-teacher/viwe-teacher.component';
 import { CheckHomeworkComponent } from './parent/check-homework/check-homework.component';
 import { AddHomeworkComponent } from './Teacher/add-homework/add-homework.component';
-
+import { TeacherServiceService } from './services/teacher-service.service';
 
 
 @NgModule({
@@ -89,7 +89,7 @@ import { AddHomeworkComponent } from './Teacher/add-homework/add-homework.compon
     FlashMessagesModule.forRoot(),
   ],
 
-  providers: [TeacherService, ValidateService, AuthenticationService, GuardService, LeaveAppServiceService, AdminLinkGuardService, TeacherLinkGuardService, StudentLinkGuardService, AdvPaymentFormService, StudentInfoService, TransferSalaryDetailsService, MaintenanceDetailService,DeclaareHolidayService, ParentServicesService],
+  providers: [TeacherService, ValidateService, AuthenticationService, GuardService, LeaveAppServiceService, AdminLinkGuardService, TeacherLinkGuardService, StudentLinkGuardService, AdvPaymentFormService, StudentInfoService, TransferSalaryDetailsService, MaintenanceDetailService,DeclaareHolidayService, ParentServicesService,TeacherServiceService],
 
   bootstrap: [AppComponent]
 })

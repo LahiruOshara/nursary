@@ -43,7 +43,7 @@
     <label><b>Account Type</b></label>
   </div>
   <div class="column3" >
-    <select [(ngModel)] = "accountType" name="accountType">
+    <select [(ngModel)] = "accountType" name="accountType" action="isParent()">
   <option value="Admin">Administrator</option>
   <option value="Teacher">Teacher</option>
   <option value="Parent">Parent</option>
@@ -58,7 +58,7 @@
 
 
   <!--  <input [(ngModel)]="accountType" name='accountType' type="text" placeholder="Type" required> -->
-  <div ng-if="accountType == Parent ">
+  <div ng-if="isParent()">
   <label><b>Teacher Username</b></label>
   <input [(ngModel)]="teacherName" name='address' type="text" placeholder="address" >
 </div>

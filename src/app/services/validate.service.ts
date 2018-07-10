@@ -86,9 +86,11 @@ export class ValidateService {
     }return true;
   }
   validatehomework(data){
-    if(data.homeWork === undefined || data.dueDate === undefined){
+    if(data.homeWork === undefined || data.dueDate === undefined ){
+      console.log(data.homeWork,data.dueDate);
       return false;
     }else{
+      console.log("validated");
       return true;
     }
   }

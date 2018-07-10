@@ -13,6 +13,7 @@ import { FlashMessagesService} from 'angular2-flash-messages';
 
 export class AccountRegisterComponent implements OnInit {
   // user fields
+
   firstName: String;
   middleName: String;
   lastName: String;
@@ -96,11 +97,20 @@ export class AccountRegisterComponent implements OnInit {
       this.router.navigate(['Home']);
       return false;
     }
-    if ( type === 'Student') {
+    if ( type === 'Parent') {
       this.router.navigate(['Home']);
       return false;
     }
     this.router.navigate(['Home']);
     return false;
+  }
+
+  isParent(){
+    console.log("is parent");
+    if(this.accountType === "Parent"){
+      return true;
+    }else{
+      return false;
+    }
   }
 }

@@ -19,7 +19,7 @@ const homeWorkSchema= mongoose.Schema({
 const homeWork=module.exports = mongoose.model('homeWork',homeWorkSchema);
 
 module.exports.getHomework = function(teacherName,callback){
-    homeWork.find({teacherName:teacherName},callback);
+    homeWork.find({teacher:teacherName},callback);
 }
 
 module.exports.recordApplication= function(application,callback){
