@@ -28,7 +28,8 @@ export class LeaveApplicationComponent implements OnInit {
       username: this.username,
       sdate: this.sdate,
       edate: this.edate,
-      reason: this.reason
+      reason: this.reason,
+      accept:false
     };
 
     if (!this.validateService.validateLeaveForm(leaveApplication)) {
@@ -47,7 +48,7 @@ export class LeaveApplicationComponent implements OnInit {
 
     // console.log(leaveApplication);
     console.log('date validated');
-    this.leaveAppService.submitLeaveApplication(leaveApplication ).subscribe(data => {
+    this.leaveAppService.submitLeaveApplication(leaveApplication).subscribe(data => {
       // console.log('Trying to register');
       if (data.success) {
         // console.log(data.msg);
