@@ -1,4 +1,16 @@
 <app-parent-side-bar></app-parent-side-bar>
-<h3><b>Homework:</b> {{hw.homework}} </h3>
 
-  <h3><b>Due Date:</b> {{hw.dueDate}}</h3>
+<h1 style="margin-left: 600px">homework Details</h1>
+<table id="customers">
+  <tr>
+    <th>Home Work</th> 
+    <th>Due Date</th>
+
+  </tr>
+  <tr *ngFor="let hw of hwList">
+    <td>{{hw.work}}</td>
+    <td>{{hw.dueDate}}</td>
+
+  </tr>
+
+</table>

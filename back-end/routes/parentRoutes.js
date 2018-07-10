@@ -41,7 +41,7 @@ router.post('/viweTeacher',function(req,res,next){
 
 
 router.post('/checkHomework',function(req,res,next){
-    Homework.checkHomework(req.body.teachername,(err,homework)=>{
+    Homework.checkHomework(req.body.teacherName,(err,homework)=>{
         if(err){
             console.log("Error getting homework");
             res.json({success:false,msg:"Error getting homework"});
