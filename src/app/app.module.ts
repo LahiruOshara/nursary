@@ -33,6 +33,12 @@ import { StudentLinkGuardService } from './services/student-link-guard.service';
 import { AdvPaymentFormService } from './services/adv-payment-form.service';
 import { StudentInfoService } from './services/student-info.service';
 import { DisplayStudentComponent } from './Teacher/display-student/display-student.component';
+
+import { TransferSalaryDetailsService } from './services/transfer-salary-details.service';
+
+import { MaintenanceDetailService } from './services/maintenance-detail.service';
+import {SalarySheetComponent} from './Teacher/salary-sheet/salary-sheet.component';
+
 import { DeclaareHolidayService } from './services/declaare-holiday.service';
 import { GetStudentComponent } from './Admin/get-student/get-student.component';
 import { ParentServicesService } from './services/parent-services.service';
@@ -43,6 +49,7 @@ import { ApplyTransportComponent } from './Parent/apply-transport/apply-transpor
 import { ViweTeacherComponent } from './parent/viwe-teacher/viwe-teacher.component';
 import { CheckHomeworkComponent } from './parent/check-homework/check-homework.component';
 import { AddHomeworkComponent } from './Teacher/add-homework/add-homework.component';
+
 
 
 @NgModule({
@@ -64,7 +71,15 @@ import { AddHomeworkComponent } from './Teacher/add-homework/add-homework.compon
     DeclareholidayComponent,
     ApproveLeaveApplicationComponent,
     DisplayStudentComponent,
+
+
+  
+    SalarySheetComponent,
+
+   
+
     GetStudentComponent, ParentSideBarComponent, ParentComponent, ApplyTransportComponent, ViweTeacherComponent, CheckHomeworkComponent, AddHomeworkComponent],
+
 
   imports: [
     BrowserModule,
@@ -73,8 +88,9 @@ import { AddHomeworkComponent } from './Teacher/add-homework/add-homework.compon
     AppRoutingModule,
     FlashMessagesModule.forRoot(),
   ],
-  // tslint:disable-next-line:max-line-length
-  providers: [TeacherService, ValidateService, AuthenticationService, GuardService, LeaveAppServiceService, AdminLinkGuardService, TeacherLinkGuardService, StudentLinkGuardService, AdvPaymentFormService, StudentInfoService, DeclaareHolidayService, ParentServicesService],
+
+  providers: [TeacherService, ValidateService, AuthenticationService, GuardService, LeaveAppServiceService, AdminLinkGuardService, TeacherLinkGuardService, StudentLinkGuardService, AdvPaymentFormService, StudentInfoService, TransferSalaryDetailsService, MaintenanceDetailService,DeclaareHolidayService, ParentServicesService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

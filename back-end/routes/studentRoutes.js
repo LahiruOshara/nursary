@@ -2,7 +2,7 @@ const express=require('express');
 const router= express.Router();
 
 const studentProfiles=require('../models/user');
-const config=require('../config/database');
+
 
 router.get('/getStudentDetails',function(req,res,next){  
     const acType='Student';
@@ -11,5 +11,6 @@ router.get('/getStudentDetails',function(req,res,next){
         res.json(data);
     });
 });
+
 
 module.exports=router;
