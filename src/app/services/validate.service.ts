@@ -68,6 +68,12 @@ export class ValidateService {
       return true;
     }return false;
   }
+  validateMaintananceForm(form){
+    if ( form.username === undefined ||form.briefDescription === undefined) {
+      return false;
+    }return true;
+
+  }
 
   validatePhoneNo(number) {
     const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;

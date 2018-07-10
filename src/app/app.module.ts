@@ -33,6 +33,12 @@ import { StudentLinkGuardService } from './services/student-link-guard.service';
 import { AdvPaymentFormService } from './services/adv-payment-form.service';
 import { StudentInfoService } from './services/student-info.service';
 import { DisplayStudentComponent } from './Teacher/display-student/display-student.component';
+
+import { TransferSalaryDetailsService } from './services/transfer-salary-details.service';
+
+import { MaintenanceDetailService } from './services/maintenance-detail.service';
+import {SalarySheetComponent} from './Teacher/salary-sheet/salary-sheet.component';
+
 import { DeclaareHolidayService } from './services/declaare-holiday.service';
 import { GetStudentComponent } from './Admin/get-student/get-student.component';
 import { ParentServicesService } from './services/parent-services.service';
@@ -40,6 +46,7 @@ import { ParentServicesService } from './services/parent-services.service';
 import { ParentSideBarComponent } from './Parent/parent-side-bar/parent-side-bar.component';
 import { ParentComponent } from './Parent/parent/parent.component';
 import { ApplyTransportComponent } from './Parent/apply-transport/apply-transport.component';
+
 
 
 @NgModule({
@@ -61,6 +68,12 @@ import { ApplyTransportComponent } from './Parent/apply-transport/apply-transpor
     DeclareholidayComponent,
     ApproveLeaveApplicationComponent,
     DisplayStudentComponent,
+
+  
+    SalarySheetComponent,
+
+   
+
     GetStudentComponent, ParentSideBarComponent, ParentComponent, ApplyTransportComponent],
 
   imports: [
@@ -70,8 +83,9 @@ import { ApplyTransportComponent } from './Parent/apply-transport/apply-transpor
     AppRoutingModule,
     FlashMessagesModule.forRoot(),
   ],
-  // tslint:disable-next-line:max-line-length
-  providers: [TeacherService, ValidateService, AuthenticationService, GuardService, LeaveAppServiceService, AdminLinkGuardService, TeacherLinkGuardService, StudentLinkGuardService, AdvPaymentFormService, StudentInfoService, DeclaareHolidayService, ParentServicesService],
+
+  providers: [TeacherService, ValidateService, AuthenticationService, GuardService, LeaveAppServiceService, AdminLinkGuardService, TeacherLinkGuardService, StudentLinkGuardService, AdvPaymentFormService, StudentInfoService, TransferSalaryDetailsService, MaintenanceDetailService,DeclaareHolidayService, ParentServicesService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

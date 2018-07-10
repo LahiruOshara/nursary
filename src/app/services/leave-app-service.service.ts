@@ -16,7 +16,13 @@ export class LeaveAppServiceService {
 
   getLeaveApplications(): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
+  
     return this.http.get('http://localhost:4000/teachers/approveLeave', {headers: headers}) as Observable<any>;
+ 
+  }
+  returnedApprovedApplication(application:Application):Observable<RegularResponse>{
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.post('http://localhost:4000/teachers/deleteApplication',application,{headers:headers}) as Observable<RegularResponse>
   }
 
 }
@@ -26,12 +32,14 @@ interface RegularResponse {
   msg: string;
 }
 
-interface LeaveForm {
+interface Application {
   username: string;
-  sdate: string;
   edate: string;
+  sdate: string;
   reason: string;
+  accept:Boolean
 }
+
 
 interface Form {
   application: Object;

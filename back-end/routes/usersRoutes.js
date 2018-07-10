@@ -2,9 +2,11 @@ const express=require('express');
 const router= express.Router();
 const passport=require('passport');
 const jwt=require('jsonwebtoken');
+const config=require('../config/database');
+const salarySheet=require('../models/salarysheet');
 
 const User=require('../models/user');
-const config=require('../config/database');
+
 
 //Register
 router.post('/register',(req,res,next)=>{
@@ -36,8 +38,6 @@ router.post('/register',(req,res,next)=>{
       }
     })
   });
-  
-  
 
 //Authenticate
 router.post('/authenticate',(req,res,next)=>{
@@ -84,5 +84,28 @@ router.get('/profile',passport.authenticate('jwt',{session:false}),function(req,
 router.get('/teacher',passport.authenticate('jwt',{session:false}),function(req,res,next){  
   res.send();
 })
+
+// user
+router.post('/relevantUsers',(req,res,next)=>{
+  let relevantUser={//create a json type object
+    teacherName:req.body.teacherName,
+    accountType:req.body.accountType
+  }
+
+  User.getusersByStudentName(relevantUser,(error,studentName)=>{//carefull send correctly parent
+    if(error) throw error
+    res.json({studentName})
+  });
+});
+  //tale relevanrt salary sheet
+  router.post('/salarySheet',(req,res,next)=>{
+   let username={username:req.body.username}
+   console.log(username)
+   salarySheet.getApplication(username,(error,application)=>{
+      if(error) throw error
+      res.json(application)
+
+   });
+  });
 
 module.exports=router;

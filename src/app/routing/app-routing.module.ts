@@ -17,6 +17,9 @@ import { ApproveLeaveApplicationComponent } from '../Admin/approve-leave-applica
 import { AdminLinkGuardService} from '../../app/services/admin-link-guard.service';
 import { TeacherLinkGuardService} from '../../app/services/teacher-link-guard.service';
 import { DisplayStudentComponent} from '../../app/Teacher/display-student/display-student.component';
+
+import {SalarySheetComponent} from '../Teacher/salary-sheet/salary-sheet.component';
+
 import { GetStudentComponent} from '../../app/Admin/get-student/get-student.component';
 
 import { ParentComponent } from '../../app/Parent/parent/parent.component';
@@ -26,15 +29,20 @@ import { ApplyTransportComponent } from '../../app/Parent/apply-transport/apply-
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'declareholiday', component: DeclareholidayComponent},
-  {path: 'teachers', component: TeacherComponent, canActivate: [TeacherLinkGuardService]},
+  {path: 'declareholiday', component: DeclareholidayComponent,canActivate: [GuardService]},
+  {path: 'teachers', component: TeacherComponent,canActivate: [GuardService]},
   {path: 'admin', component: AdminComponent, canActivate: [GuardService]},
   {path: 'accountLogIn', component: AccountLoginComponent  },
   {path: 'accountRegister', component: AccountRegisterComponent, canActivate: [AdminLinkGuardService]},
   {path: 'profile', component: ProfileComponent, canActivate: [GuardService]},
   {path: 'leaveApplication', component: LeaveApplicationComponent, canActivate: [TeacherLinkGuardService]},
-  {path: 'reqMantenance', component: RequestForMaintenanceComponent, canActivate: [GuardService]},
+  {path: 'reqMantenance', component: RequestForMaintenanceComponent, },
   {path: 'advPayment', component: AskForAdvancePaymentComponent, canActivate: [GuardService]},
+
+  {path:'salarySheet',component:SalarySheetComponent,canActivate: [GuardService]}
+ 
+  
+
   {path: 'approveLeave', component: ApproveLeaveApplicationComponent, canActivate: [AdminLinkGuardService]},
   {path: 'studentDetails', component: DisplayStudentComponent, canActivate: [TeacherLinkGuardService]},
   {path: 'studentDetailsA', component: GetStudentComponent, canActivate: [AdminLinkGuardService]},
