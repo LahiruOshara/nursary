@@ -6,14 +6,12 @@ import { Observable } from 'rxjs/Observable';
 export class TeacherServiceService {
 
   constructor( private http: HttpClient) { }
-  addHW(home){
-    console.log("==============",home.homeWork);
+  addHW(home) {
+    console.log('==============', home.homeWork);
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     const res = this.http.post('http://localhost:4000/teachers/addhomework', home, {headers: headers}) as Observable<RegularResponse>;
     console.log(res);
     return res;
-
-    
   }
 }
 

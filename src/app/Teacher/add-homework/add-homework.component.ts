@@ -24,7 +24,7 @@ export class AddHomeworkComponent implements OnInit {
     this.username = localStorage.getItem('username');
   }
 
-  onFormSubmit(data) {
+  onFormSubmit() {
     console.log();
     const temp = {
       'teacherName' : this.username,

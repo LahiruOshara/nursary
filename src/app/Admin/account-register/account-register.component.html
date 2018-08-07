@@ -46,7 +46,7 @@
     <select [(ngModel)] = "accountType" name="accountType">
   <option value="Admin">Administrator</option>
   <option value="Teacher">Teacher</option>
-  <option value="Parent">Parent</option>
+  <option value="Student">Student</option>
 
 </select>
   </div>
@@ -58,10 +58,7 @@
 
 
   <!--  <input [(ngModel)]="accountType" name='accountType' type="text" placeholder="Type" required> -->
-  <div ng-if="accountType === 'Parent'">
-  <label><b>Teacher Username</b></label>
-  <input [(ngModel)]="teacherName" name='address' type="text" placeholder="address" >
-</div>
+
     <label><b>Address</b></label>
     <input [(ngModel)]="address" name='address' type="text" placeholder="address" required>
 

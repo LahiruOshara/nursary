@@ -26,8 +26,7 @@ import { ParentLinkService } from '../../app/services/parent-link.service';
 import { ParentComponent } from '../../app/Parent/parent/parent.component';
 import { ApplyTransportComponent } from '../../app/Parent/apply-transport/apply-transport.component';
 
-import { ViweTeacherComponent } from '../../app/parent/viwe-teacher/viwe-teacher.component';
-import { CheckHomeworkComponent } from '../../app/parent/check-homework/check-homework.component';
+
 import { AddHomeworkComponent } from '../../app/Teacher/add-homework/add-homework.component';
 
 import { ViweTeacherComponent } from '../../app/Parent/viwe-teacher/viwe-teacher.component';

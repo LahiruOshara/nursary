@@ -43,11 +43,11 @@ export class ValidateService {
     }return true;
   }
 
-  validateAmount(amount){
-    const am=/^\d+(?:\.\d{0,2})$/;
+  validateAmount(amount) {
+    const am = /^\d+(?:\.\d{0,2})$/;
     return am.test(String(amount));
   }
-  
+
   validateDates(date1, date2) {
     const temp1 = new Date(date1);
     const temp2 = new Date(date2);
@@ -68,8 +68,8 @@ export class ValidateService {
       return true;
     }return false;
   }
-  validateMaintananceForm(form){
-    if ( form.username === undefined ||form.briefDescription === undefined) {
+  validateMaintananceForm(form) {
+    if ( form.username === undefined || form.briefDescription === undefined) {
       return false;
     }return true;
 
@@ -85,12 +85,12 @@ export class ValidateService {
       return false;
     }return true;
   }
-  validatehomework(data){
-    if(data.homeWork === undefined || data.dueDate === undefined ){
-      console.log(data.homeWork,data.dueDate);
+  validatehomework(data) {
+    if (data.homeWork === undefined || data.dueDate === undefined ) {
+      console.log(data.homeWork, data.dueDate);
       return false;
-    }else{
-      console.log("validated");
+    } else {
+      console.log('validated');
       return true;
     }
   }

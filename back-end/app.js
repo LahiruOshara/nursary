@@ -8,7 +8,7 @@ const mongoose=require('mongoose');
 const config=require('./config/database');
 //gjhgjggjgjgj
 const app = express(); //express instance
-const port = 4000; //port
+const port = process.env.PORT || 8080; //port
 
 //connect to the database
 mongoose.connect(config.database);

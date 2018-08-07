@@ -10,12 +10,12 @@ export class AdvPaymentFormService {
 
   submitAdvPaymentForm(form): Observable<RegularResponse> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post('http://localhost:4000/teachers/advPayment', form, {headers: headers}) as Observable<RegularResponse>;
+    return this.http.post('teachers/advPayment', form, {headers: headers}) as Observable<RegularResponse>;
   }
 
   getAdvPaymentForm(): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.get('http://localhost:4000/teachers/approveLeave', {headers: headers}) as Observable<any>;
+    return this.http.get('teachers/approveLeave', {headers: headers}) as Observable<any>;
   }
 
 }

@@ -10,12 +10,12 @@ export class DeclaareHolidayService {
 
   submit(holiday): Observable<RegularResponse> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post('http://localhost:4000/teachers/holiday', holiday, {headers: headers}) as Observable<RegularResponse>;
+    return this.http.post('teachers/holiday', holiday, {headers: headers}) as Observable<RegularResponse>;
   }
 
   getHolidays(): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.get('http://localhost:4000/teachers/holidayDec', {headers: headers}) as Observable<any>;
+    return this.http.get('teachers/holidayDec', {headers: headers}) as Observable<any>;
   }
 
 }

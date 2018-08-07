@@ -15,13 +15,13 @@ export class AuthenticationService {
   // register user
   registerUser(user): Observable<RegularResponse> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post('http://localhost:4000/users/register', user, {headers: headers}) as Observable<RegularResponse>;
+    return this.http.post('users/register', user, {headers: headers}) as Observable<RegularResponse>;
   }
   // authenticate
   authenticateUser(user): Observable<AuthenticateResponse> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     // console.log('auth service:' + headers.get('Content-Type'));
-    return this.http.post('http://localhost:4000/users/authenticate', user, {headers: headers}) as Observable<AuthenticateResponse>;
+    return this.http.post('users/authenticate', user, {headers: headers}) as Observable<AuthenticateResponse>;
   }
 
   getProfile() {
@@ -31,7 +31,7 @@ export class AuthenticationService {
     // console.log('auth service');
     // headers.set('Content-Type', 'application/json');
     // console.log('auth service:' + headers.get('Authorization'));
-    return this.http.get('http://localhost:4000/users/profile', {headers: headers}) as Observable<ProfileResponse>;
+    return this.http.get('users/profile', {headers: headers}) as Observable<ProfileResponse>;
   }
 
   storeUserdata(token, user) {

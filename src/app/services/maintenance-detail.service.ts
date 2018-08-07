@@ -10,12 +10,12 @@ export class MaintenanceDetailService {
 
   submitMaintenanceApplication(form): Observable<RegularResponse> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post('http://localhost:4000/teachers/requestMaintenance', form, {headers: headers}) as Observable<RegularResponse>;
+    return this.http.post('teachers/requestMaintenance', form, {headers: headers}) as Observable<RegularResponse>;
   }
 
   getMaintenanceApplication(): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.get('http://localhost:4000/teachers/requestMaintenance', {headers: headers}) as Observable<any>;
+    return this.http.get('teachers/requestMaintenance', {headers: headers}) as Observable<any>;
   }
 
 }
